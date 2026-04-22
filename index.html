@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="color-scheme" content="dark light"/>
+<meta name="theme-color" content="#07070A" media="(prefers-color-scheme: dark)"/>
+<meta name="theme-color" content="#F5F4FA" media="(prefers-color-scheme: light)"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nehang Patel — Software Engineer</title>
+<meta name="description" content="Nehang Patel — MS Computer Science @ USC Viterbi. Software engineer specialising in full-stack development, data pipelines, and intuitive UI. Building products that feel as good as they function."/>
+<meta name="author" content="Nehang Patel"/>
+<meta property="og:title" content="Nehang Patel — Software Engineer"/>
+<meta property="og:description" content="MS CS @ USC Viterbi. Full-stack engineer, data pipeline builder, and UI craftsman. Explore my work."/>
+<meta property="og:type" content="website"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%2307070A'/%3E%3Cline x1='7' y1='8' x2='17' y2='6' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.6'/%3E%3Cline x1='7' y1='8' x2='17' y2='17' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.4'/%3E%3Cline x1='7' y1='17' x2='17' y2='6' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.4'/%3E%3Cline x1='7' y1='17' x2='17' y2='17' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.6'/%3E%3Cline x1='7' y1='17' x2='17' y2='28' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.4'/%3E%3Cline x1='7' y1='26' x2='17' y2='17' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.4'/%3E%3Cline x1='7' y1='26' x2='17' y2='28' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.6'/%3E%3Cline x1='17' y1='6' x2='27' y2='12' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.6'/%3E%3Cline x1='17' y1='17' x2='27' y2='12' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.4'/%3E%3Cline x1='17' y1='17' x2='27' y2='22' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.4'/%3E%3Cline x1='17' y1='28' x2='27' y2='22' stroke='%23A78BF5' stroke-width='.9' stroke-opacity='.6'/%3E%3Ccircle cx='7' cy='8' r='2.4' fill='%23A78BF5'/%3E%3Ccircle cx='7' cy='17' r='2.4' fill='%23A78BF5'/%3E%3Ccircle cx='7' cy='26' r='2.4' fill='%23A78BF5'/%3E%3Ccircle cx='17' cy='6' r='2.1' fill='none' stroke='%23A78BF5' stroke-width='1.2'/%3E%3Ccircle cx='17' cy='17' r='2.6' fill='%23A78BF5'/%3E%3Ccircle cx='17' cy='28' r='2.1' fill='none' stroke='%23A78BF5' stroke-width='1.2'/%3E%3Ccircle cx='27' cy='12' r='2.2' fill='%235EEAD4'/%3E%3Ccircle cx='27' cy='22' r='2.2' fill='%235EEAD4'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<!-- Inline theme bootstrap: runs synchronously before CSS paint to prevent flash -->
+<script>
+(function(){
+  try{
+    var t=localStorage.getItem('nehang-theme');
+    document.documentElement.setAttribute('data-theme', t==='light'?'light':'dark');
+  }catch(e){}
+})();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<noscript><div class="noscript-bar">This portfolio works best with JavaScript enabled — animations and interactive features require it.</div></noscript>
+<div id="progress-bar"></div>
+<div id="copy-toast">✓ Email copied to clipboard</div>
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<nav id="nav">
+  <a href="#" class="logo" aria-label="Nehang Patel">
+    <div class="logo-mark">
+      <!-- Neural network icon: 3 layers of nodes connected by weighted edges -->
+      <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- edges: input → hidden -->
+        <line x1="7" y1="8"  x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="8"  x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="17" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <!-- edges: hidden → output -->
+        <line x1="17" y1="6"  x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="17" x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="17" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="28" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <!-- input nodes -->
+        <circle cx="7" cy="8"  r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="17" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="26" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <!-- hidden nodes -->
+        <circle cx="17" cy="6"  r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="17" cy="17" r="2.6" fill="var(--gold)" opacity="1"/>
+        <circle cx="17" cy="28" r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <!-- output nodes -->
+        <circle cx="27" cy="12" r="2.2" fill="var(--teal)" opacity=".9"/>
+        <circle cx="27" cy="22" r="2.2" fill="var(--teal)" opacity=".9"/>
+      </svg>
+    </div>
+    <div class="logo-wordmark">
+      <span class="logo-name">Nehang Patel</span>
+      <span class="logo-sub">Software Engineer</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#exp">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="resume-btn" id="resumeBtn">Resume</button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <!-- Moon (dark mode) -->
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <!-- Sun (light mode) -->
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="#about" class="dl">About</a>
+  <a href="#projects" class="dl">Projects</a>
+  <a href="#exp" class="dl">Experience</a>
+  <a href="#education" class="dl">Education</a>
+  <a href="#contact" class="dl">Contact</a>
+  <button class="drawer-resume" id="drawerResumeBtn">Resume</button>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" class="drawer-soc" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/NehangPatel23" target="_blank" class="drawer-soc" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+    </a>
+    <a href="mailto:nehangal@usc.edu" class="drawer-soc" aria-label="Email">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="nnCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="otw"><div class="otw-dot"></div>Open to internships &amp; new grad roles</div>
+    <div class="eyebrow"><div class="edot"></div>MS CS @ USC Viterbi · Los Angeles, CA</div>
+    <h1>Building products that feel as <i>good</i> as they <span class="tl">function.</span></h1>
+    <p class="tagline">I'm Nehang Patel — a software engineer with a passion for intuitive UI, robust data pipelines, and full-stack systems that make life measurably easier.</p>
+    <div class="ctas">
+      <a href="#projects" class="btn btn-p">View Work</a>
+      <a href="mailto:nehangal@usc.edu" class="btn btn-g">Get in Touch</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="sline"></div><span>Scroll</span></div>
+  <div class="graph-legend">
+    <p>A* Pathfinding — h(n) = Manhattan</p>
+    <div class="legend-items">
+      <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Start</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#FCD34D"></div>Goal</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#A78BF5"></div>Open set</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2d1b69"></div>Closed set</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#5EEAD4"></div>Path</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="slabel r">About Me</div>
+    <h2 class="r r1">Engineer at heart,<br><i>builder</i> by nature.</h2>
+    <p class="atext r r2">I'm a CS master's student at <strong>USC Viterbi</strong>, previously completing my BS in CS at the University of Cincinnati with a minor in <strong>Cyber Operations &amp; Software Engineering</strong>.</p>
+    <p class="atext r r3">My work spans data pipelines, mobile apps, web scraping systems, and interactive UI — always anchored in <strong>clean architecture, user empathy, and measurable impact</strong>. Beyond engineering, I've taught design thinking to 1,500+ students and currently lead marketing for <strong>GRIDS @ USC</strong>.</p>
+    <div class="skills-row r r3">
+      <span class="sk">Python<span class="sk-tip">Language</span></span>
+      <span class="sk">Flutter<span class="sk-tip">Mobile Framework</span></span>
+      <span class="sk">GoLang<span class="sk-tip">Language</span></span>
+      <span class="sk">MySQL<span class="sk-tip">Database</span></span>
+      <span class="sk">C++<span class="sk-tip">Language</span></span>
+      <span class="sk">HTML/CSS/JS<span class="sk-tip">Web Fundamentals</span></span>
+      <span class="sk">BeautifulSoup<span class="sk-tip">Web Scraping</span></span>
+      <span class="sk">Selenium<span class="sk-tip">Web Scraping</span></span>
+      <span class="sk">Pandas<span class="sk-tip">Data Analysis</span></span>
+      <span class="sk">NumPy<span class="sk-tip">Data Analysis</span></span>
+      <span class="sk">MATLAB<span class="sk-tip">Scientific Computing</span></span>
+      <span class="sk">Git<span class="sk-tip">Version Control</span></span>
+      <span class="sk">Agile<span class="sk-tip">Methodology</span></span>
+      <span class="sk">LabVIEW<span class="sk-tip">Instrumentation</span></span>
+    </div>
+    <div class="stats r r4">
+      <div class="stat-item"><div class="stat-n" data-target="5" data-suffix="+">5+</div><div class="stat-l">Years Coding</div></div>
+      <div class="stat-item"><div class="stat-n" data-target="8" data-suffix="+">8+</div><div class="stat-l">Roles Held</div></div>
+      <div class="stat-item"><div class="stat-n" data-target="1500" data-suffix="+" data-display="1.5k+">1.5k+</div><div class="stat-l">Students Taught</div></div>
+      <div class="stat-item"><div class="stat-n" data-target="4" data-suffix="×">4×</div><div class="stat-l">Dean's List</div></div>
+    </div>
+  </div>
+  <div class="r r2">
+    <div class="avis">
+      <canvas id="ac"></canvas>
+      <div class="scene-label">
+        <p>Binary Search Tree</p>
+        <p>Live <span>insertions</span> → O(log n)</p>
+      </div>
+      <div class="avis-badge"><p>Currently studying at</p><h4>University of Southern California</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="slabel r">Selected Projects</div>
+  <h2 class="r r1">Things I've<br><i>shipped</i></h2>
+  <div class="pfilters r r2">
+    <button class="pftab active" data-filter="all">All</button>
+    <button class="pftab" data-filter="active">In Development</button>
+    <button class="pftab" data-filter="completed">Completed</button>
+  </div>
+  <div class="pgrid" id="pgrid">
+    <div class="pcard wide r" data-category="all completed">
+      <div class="pglow"></div>
+      <div class="feat-inner">
+        <div>
+          <div class="pbadge">Featured · Senior Design Project</div>
+          <div class="pnum">01</div>
+          <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">Dart</span><span class="ptag">Agile</span><span class="ptag">Full-Stack</span></div>
+          <h3 class="ptitle">FinTrackr</h3>
+          <p class="pdesc">End-to-end personal finance app with modules for expense tracking, debt payoff planning, tax estimation, and financial literacy resources. Owned UI/UX design, sprint planning, and both front-end &amp; back-end development with a cross-functional team of 3.</p>
+          <a href="https://github.com/NehangPatel23/FinTrackr" target="_blank" class="plink">View on GitHub</a>
+        </div>
+        <div class="feat-kpi">
+          <p class="feat-kpi-label">Highlights</p>
+          <div class="feat-kpi-item"><p class="feat-kpi-title">Clean UI/UX</p><p class="feat-kpi-sub">Structured nav, progress indicators, visual polish</p></div>
+          <div class="feat-kpi-item"><p class="feat-kpi-title">Agile Process</p><p class="feat-kpi-sub">Sprint planning, backlog refinement, retrospectives</p></div>
+          <div class="feat-kpi-item"><p class="feat-kpi-title">GitHub Collab</p><p class="feat-kpi-sub">Repo maintenance, PR reviews, architecture ownership</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard r" data-category="all completed" data-highlights='[{"t":"10k+ Records/Day","s":"Scraped, QA-checked and normalised at production scale"},{"t":"Zero Downtime QA","s":"Automated consistency checks before every DB write"},{"t":"Pipeline Dashboards","s":"MySQL-backed engineering visibility into scraper health"}]'>
+      <button class="pcard-toggle" aria-label="Expand"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></button>
+      <div class="pglow"></div>
+      <div class="pnum">02</div>
+      <div class="ptags"><span class="ptag">Python</span><span class="ptag">BeautifulSoup</span><span class="ptag">Selenium</span><span class="ptag">MySQL</span></div>
+      <h3 class="ptitle">Scalable Scraping Pipeline</h3>
+      <p class="pdesc">Refactored an enterprise web-scraping codebase at MediTechSafe to process 10,000+ records daily. Added QA automation, data normalisation, and engineering dashboards for real-time pipeline visibility via MySQL queries.</p>
+      <p style="font-size:.72rem;color:var(--muted);letter-spacing:.04em;font-style:italic;margin-top:4px">Proprietary codebase — built during internship at MediTechSafe.</p>
+      <div class="phighlights"></div>
+    </div>
+
+    <div class="pcard r r1" data-category="all completed" data-highlights='[{"t":"Self-Taught Flutter","s":"Learned the framework from scratch and shipped production UI in one co-op term"},{"t":"Golang API Bridge","s":"Seamless REST integration between Flutter frontend and Go backend"},{"t":"Reusable Widget Library","s":"Component-first architecture for consistent design across the app"}]'>
+      <button class="pcard-toggle" aria-label="Expand"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></button>
+      <div class="pglow"></div>
+      <div class="pnum">03</div>
+      <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">GoLang</span><span class="ptag">REST APIs</span></div>
+      <h3 class="ptitle">MediTechSafe Internal UI</h3>
+      <p class="pdesc">Learned Flutter independently and built a new internal project UI — responsive layouts, reusable widget library, and seamless integration with Golang backend APIs, improving design consistency across the team.</p>
+      <p style="font-size:.72rem;color:var(--muted);letter-spacing:.04em;font-style:italic;margin-top:4px">Internal tooling — built during internship at MediTechSafe.</p>
+      <div class="phighlights"></div>
+    </div>
+
+    <div class="pcard r r2" data-category="all active" data-highlights='[{"t":"Live on Vercel","s":"Fully deployed — Canvas-faithful UI with modern React+Vite stack"},{"t":"Dark / Light Mode","s":"Full theme support with ShadCN/UI and custom TailwindCSS"},{"t":"Modular Architecture","s":"Clean component hierarchy built for easy feature extension"}]'>
+      <button class="pcard-toggle" aria-label="Expand"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></button>
+      <div class="pglow"></div>
+      <div class="pbadge">Active · In Development</div>
+      <div class="pnum">04</div>
+      <div class="ptags"><span class="ptag">React</span><span class="ptag">Vite</span><span class="ptag">TypeScript</span><span class="ptag">TailwindCSS</span></div>
+      <h3 class="ptitle">CourseArc</h3>
+      <p class="pdesc">A full-stack reimagining of Canvas LMS — replicating the dashboard, course pages, discussion boards, and sidebar navigation with a modern React + Vite stack. Features dark/light mode, ShadCN/UI components, and a modular architecture built for extensibility. Live on Vercel.</p>
+      <a href="https://canvas-clone-theta.vercel.app" target="_blank" class="plink">View live</a>
+      <div class="phighlights"></div>
+    </div>
+
+    <div class="pcard r r3" data-category="all active" data-highlights='[{"t":"Unified Observability","s":"Logs, metrics, and alerts in a single developer-friendly interface"},{"t":"Real-Time Metrics","s":"Live CPU, memory, and disk visualisation with trend analysis"},{"t":"Alert Rules Engine","s":"Configurable threshold-based alerts with dynamic toggle support"}]'>
+      <button class="pcard-toggle" aria-label="Expand"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></button>
+      <div class="pglow"></div>
+      <div class="pbadge">Active · In Development</div>
+      <div class="pnum">05</div>
+      <div class="ptags"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">React</span><span class="ptag">TailwindCSS</span></div>
+      <h3 class="ptitle">PulseBoard</h3>
+      <p class="pdesc">A real-time system monitoring dashboard that unifies logs, metrics, and alerts into a single developer-friendly interface. Visualises CPU, memory, and disk usage live; supports customisable alert rules and trend analysis. Built with Next.js App Router and a component-based architecture focused on UX clarity over data overload.</p>
+      <p style="font-size:.72rem;color:var(--muted);letter-spacing:.04em;font-style:italic;margin-top:4px">Repository link available upon request — actively in development.</p>
+      <div class="phighlights"></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <div id="exp">
+    <div class="slabel r">Experience</div>
+    <h2 class="r r1">Where I've<br>made an <i>impact</i></h2>
+    <div class="tline">
+
+      <div class="titem">
+        <div class="tdot teal"></div>
+        <p class="tprogress">Current</p>
+        <p class="tdate">Jan 2026 — Present</p>
+        <h3 class="trole">Director of Marketing</h3>
+        <p class="tco">GRIDS (Graduates Rising in Data Science) · USC · Los Angeles, CA</p>
+        <ul class="tlist">
+          <li>Leading marketing and outreach strategy for USC's data science graduate student organisation</li>
+          <li>Previously served as Executive Board Member – Marketing &amp; Outreach (Oct 2025 – Jan 2026), driving initial brand presence and member engagement</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">Aug 2024 — May 2025</p>
+        <h3 class="trole">Peer Teaching Assistant</h3>
+        <p class="tco">Dept. of Engineering Education, University of Cincinnati · Cincinnati, OH</p>
+        <ul class="tlist">
+          <li>Taught ENED-1100 &amp; ENED-1120 to classes of 72 students (1:24 ratio); mentored on teamwork, conflict resolution &amp; leadership</li>
+          <li>Tutored students in the Engineering Education Tutor Room on core engineering concepts</li>
+          <li>Graded assignments and facilitated active in-class learning across all sessions</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">Jan 2024 — Apr 2024</p>
+        <h3 class="trole">Software Developer Intern</h3>
+        <p class="tco">MediTechSafe Inc · West Chester, OH</p>
+        <ul class="tlist">
+          <li>Refactored web-scraping codebase to handle 10,000+ records daily with improved stability and maintainability</li>
+          <li>Learned Flutter independently; built responsive layouts and reusable widgets for a new internal project UI</li>
+          <li>Integrated Flutter components with Golang backend APIs for seamless, responsive applications</li>
+          <li>Created internal visualisations surfacing pipeline performance metrics; queried MySQL to validate accuracy</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">Aug 2023 — Dec 2023</p>
+        <h3 class="trole">Learning Assistant</h3>
+        <p class="tco">UC Learning Commons, University of Cincinnati · Cincinnati, OH</p>
+        <ul class="tlist">
+          <li>Promoted active learning via application-based teaching in large-lecture classrooms with faculty members</li>
+          <li>Facilitated group discussions, guided problem sets, and held weekly office hours for student support</li>
+          <li>Attended regular faculty meetings for ongoing professional development as an educator</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">Jan 2023 — Dec 2023</p>
+        <h3 class="trole">Peer Tutor</h3>
+        <p class="tco">UC Learning Commons, University of Cincinnati · Cincinnati, OH</p>
+        <ul class="tlist">
+          <li>Provided one-on-one academic support across a wide range of CS and engineering courses</li>
+          <li>Facilitated online and in-person tutoring sessions; created a safe space for students to learn and make mistakes</li>
+          <li>Served as a programme representative, modelling professional attitudes to students and faculty</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">May 2023 — Aug 2023</p>
+        <h3 class="trole">Software Developer Intern</h3>
+        <p class="tco">MediTechSafe Inc · Hamilton, OH</p>
+        <ul class="tlist">
+          <li>Collected and normalised data from thousands of online records weekly using web scraping techniques</li>
+          <li>Built scalable data pipelines to clean and standardise scraped datasets for seamless system integration</li>
+          <li>Automated workflows saving several hours of manual collection per project cycle</li>
+          <li>Implemented QA measures on thousands of records per run, resolving data inconsistencies pre-integration</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">Jan 2022 — Dec 2023</p>
+        <h3 class="trole">Peer Teaching Assistant</h3>
+        <p class="tco">Dept. of Engineering Education, University of Cincinnati · Cincinnati, OH</p>
+        <ul class="tlist">
+          <li>Led final presentations for the Engineering Design Thinking Classroom Simulation project</li>
+          <li>Led orientation workshops for incoming freshmen and the 2022 Summer Camp for 150+ high school seniors</li>
+          <li>Coordinated demonstrations and simulations for 1,500+ students across cohorts</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">Aug 2022 — Dec 2022</p>
+        <h3 class="trole">Software Co-op</h3>
+        <p class="tco">ITE LLC · Loveland, OH</p>
+        <ul class="tlist">
+          <li>Completed engineering project tasks including C++ debugging, configuration updates, and computer models under Technical Lead</li>
+          <li>Applied engineering principles on-the-job; gained hands-on experience with IoT workflows (Losant) and Neo4j</li>
+        </ul>
+      </div>
+
+      <div class="titem">
+        <div class="tdot"></div>
+        <p class="tdate">Feb 2022 — Apr 2022</p>
+        <h3 class="trole">Cybersecurity Analyst Apprentice</h3>
+        <p class="tco">iQ4 Corporation · Remote</p>
+        <ul class="tlist">
+          <li>Developed familiarity with NIST and NICE cybersecurity frameworks through case studies and industry mentorship</li>
+          <li>Incorporated Incident Response methodologies into a case study modelling industry-standard practices</li>
+          <li>Presented weekly progress updates; translated complex findings for technical and non-technical audiences</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="slabel r">Education</div>
+  <h2 class="r r1">Academic<br><i>foundations</i></h2>
+  <div class="egrid">
+    <div class="ecard r">
+      <p class="edeg">Master of Science · Computer Science</p>
+      <h3 class="ename">University of Southern California</h3>
+      <p class="euni">Viterbi School of Engineering</p>
+      <p class="edate">Aug 2025 — May 2027 · Los Angeles, CA</p>
+      <p class="ecourses"><strong>Coursework:</strong> Analysis of Algorithms, Database Systems, Web Technologies, Applied Cryptography</p>
+    </div>
+    <div class="ecard r r1">
+      <p class="edeg">Bachelor of Science · Computer Science</p>
+      <h3 class="ename">University of Cincinnati</h3>
+      <p class="euni">College of Engineering &amp; Applied Science</p>
+      <p class="edate">Aug 2020 — May 2025 · Cincinnati, OH</p>
+      <p class="ecourses"><strong>Minor:</strong> Cyber Operations &amp; Software Engineering<br><strong>Honours:</strong> Dean's List — Fall '20, Summer '22, Fall '24, Spring '25</p>
+    </div>
+  </div>
+</section>
+
+<div id="marquee">
+  <div class="mwrap">
+    <div class="mtrack">
+      <div class="mitem">Python <span>✦</span> Flutter <span>✦</span> GoLang <span>✦</span> MySQL <span>✦</span> C++ <span>✦</span> BeautifulSoup <span>✦</span> Selenium <span>✦</span> Pandas <span>✦</span> NumPy <span>✦</span> HTML/CSS/JS <span>✦</span> Git <span>✦</span> Agile <span>✦</span> IBM Watson <span>✦</span> LabVIEW <span>✦</span> MATLAB <span>✦</span> VBA</div>
+      <div class="mitem">Python <span>✦</span> Flutter <span>✦</span> GoLang <span>✦</span> MySQL <span>✦</span> C++ <span>✦</span> BeautifulSoup <span>✦</span> Selenium <span>✦</span> Pandas <span>✦</span> NumPy <span>✦</span> HTML/CSS/JS <span>✦</span> Git <span>✦</span> Agile <span>✦</span> IBM Watson <span>✦</span> LabVIEW <span>✦</span> MATLAB <span>✦</span> VBA</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div id="certs">
+    <div class="slabel r">Certifications</div>
+    <h2 class="r r1">Credentials &amp;<br><i>recognition</i></h2>
+    <div class="cgrid r r1">
+      <div class="ccard"><p class="corg">iQ4 Cybersecurity</p><p class="ctitle">The Threat Within — Cybersecurity Virtual Apprenticeship</p></div>
+      <div class="ccard"><p class="corg">IBM Skills Academy</p><p class="ctitle">Build Your Own Chatbot · UX Design Fundamentals</p></div>
+      <div class="ccard"><p class="corg">IBM Skills Academy</p><p class="ctitle">Data Science Tools · Methodologies · Cloud Core</p></div>
+      <div class="ccard"><p class="corg">IBM</p><p class="ctitle">Data Science Practitioner · Data Science Foundations L2</p></div>
+      <div class="ccard"><p class="corg">IBM / Coursera</p><p class="ctitle">Machine Learning with Python — Association Rules &amp; kMeans Clustering</p></div>
+      <div class="ccard"><p class="corg">The Coding School</p><p class="ctitle">Introduction to Quantum Computing</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMINAL -->
+<section id="terminal-section">
+  <div class="term-wrap">
+    <div>
+      <div class="slabel r">Working Environment</div>
+      <h2 class="r r1">This is where<br>I <i>live</i> &amp; build.</h2>
+      <p class="atext r r2">Every project starts here — a terminal, a blank file, and a problem worth solving. From scraping pipelines to Flutter UIs to graph databases, this is the stack I reach for.</p>
+      <p class="atext r r3">The terminal isn't just a tool — it's a mindset. <strong>Think clearly, write precisely, iterate fast.</strong> Whether it's debugging a Golang API or wrangling 10k records through a Python pipeline, the process is always the same.</p>
+    </div>
+    <div class="r r2">
+      <div class="term-box">
+        <div class="term-bar">
+          <div class="term-dot" style="background:#ff5f57"></div>
+          <div class="term-dot" style="background:#febc2e"></div>
+          <div class="term-dot" style="background:#28c840"></div>
+          <span class="term-bar-title">zsh — nehang@viterbi-cs  <span style="color:var(--gold);opacity:.7">git:(main)</span>  ~/dev</span>
+        </div>
+        <div class="term-body" id="termBody"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div id="contact" class="r">
+    <div class="slabel" style="justify-content:center;margin-bottom:16px">Let's connect</div>
+    <h2 style="margin-bottom:28px">Have something<br><i>in mind?</i> Let's talk.</h2>
+    <div class="cemail-wrap r r1">
+      <div class="cemail" id="copyEmail" role="button" tabindex="0" aria-label="Copy email address">nehangal@usc.edu</div>
+      <span class="cemail-hint">Click to copy</span>
+    </div>
+    <div class="socials r r2" style="gap:16px">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" class="soc" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <!-- GitHub -->
+      <a href="https://github.com/NehangPatel23" target="_blank" class="soc" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Nehang Patel. All rights reserved.</p>
+  <div class="footer-right">
+    <span>Built with</span>
+    <svg class="footer-heart" width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <span>, algorithms &amp; intention.</span>
+  </div>
+</footer>
+
+<!-- RESUME MODAL -->
+<div id="resumeOverlay" role="dialog" aria-modal="true" aria-label="Nehang Patel — Resume">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <p class="resume-modal-title">Nehang Patel <span>— Resume</span></p>
+      <div class="resume-modal-actions">
+        <a href="assets/resume/Nehang_Patel_Resume.pdf"
+            download="Nehang_Patel_Resume.pdf"
+            class="resume-dl-btn" id="resumeDlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="resume-close" id="resumeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="resume-body">
+      <div class="rv-header">
+        <h2 class="rv-name">Nehang <span>Patel</span></h2>
+        <div class="rv-meta">
+          <span>Los Angeles, CA</span>
+          <a href="mailto:nehangal@usc.edu">nehangal@usc.edu</a>
+          <a href="https://linkedin.com/in/nehangpatel/" target="_blank">linkedin.com/in/nehangpatel</a>
+          <a href="https://github.com/NehangPatel23" target="_blank">github.com/NehangPatel23</a>
+        </div>
+      </div>
+
+      <div class="rv-section">
+        <p class="rv-section-title">Education</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Southern California</span><span class="rv-entry-date">Aug 2025 — May 2027</span></div>
+          <p class="rv-entry-sub">MS Computer Science · Viterbi School of Engineering · Los Angeles, CA</p>
+          <p style="font-size:.76rem;color:var(--muted)">Algorithms, Database Systems, Web Technologies, Applied Cryptography</p>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Cincinnati</span><span class="rv-entry-date">Aug 2020 — May 2025</span></div>
+          <p class="rv-entry-sub">BS Computer Science · Minor: Cyber Operations &amp; Software Engineering · Cincinnati, OH</p>
+          <p style="font-size:.76rem;color:var(--muted)">Dean's List: Fall '20, Summer '22, Fall '24, Spring '25</p>
+        </div>
+      </div>
+
+      <div class="rv-section">
+        <p class="rv-section-title">Experience</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Director of Marketing</span><span class="rv-entry-date">Jan 2026 — Present</span></div>
+          <p class="rv-entry-sub">GRIDS @ USC · Los Angeles, CA</p>
+          <ul class="rv-list"><li>Leading marketing and outreach strategy for USC's data science graduate student organisation</li></ul>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">Jan 2024 — Apr 2024</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · West Chester, OH</p>
+          <ul class="rv-list">
+            <li>Refactored web-scraping codebase to handle 10,000+ records daily with improved stability</li>
+            <li>Built Flutter UI with Golang API integration; queried MySQL for pipeline validation</li>
+          </ul>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">May 2023 — Aug 2023</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · Hamilton, OH</p>
+          <ul class="rv-list"><li>Built scalable scraping pipelines and QA automation; saved hours of manual collection per sprint</li></ul>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Peer Teaching Assistant</span><span class="rv-entry-date">Jan 2022 — May 2025</span></div>
+          <p class="rv-entry-sub">University of Cincinnati · Cincinnati, OH</p>
+          <ul class="rv-list"><li>Taught engineering design thinking to 72 students per cohort; coordinated events for 1,500+ students</li></ul>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Co-op</span><span class="rv-entry-date">Aug 2022 — Dec 2022</span></div>
+          <p class="rv-entry-sub">ITE LLC · Loveland, OH</p>
+          <ul class="rv-list"><li>C++ debugging, IoT workflows (Losant), configuration updates under senior engineers</li></ul>
+        </div>
+      </div>
+
+      <div class="rv-section">
+        <p class="rv-section-title">Projects</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">FinTrackr</span><span class="rv-entry-date">Aug 2024 — May 2025</span></div>
+          <p class="rv-entry-sub">Flutter · Dart · Agile · Full-Stack</p>
+          <ul class="rv-list"><li>End-to-end finance app; expense tracking, debt payoff, taxes, literacy resources. Team of 3.</li></ul>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">CourseArc</span><span class="rv-entry-date">2025 — Present</span></div>
+          <p class="rv-entry-sub">React · Vite · TypeScript · TailwindCSS · ShadCN/UI</p>
+          <ul class="rv-list"><li>Full-stack Canvas LMS reimagining with dark/light mode, modular architecture. Live on Vercel.</li></ul>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">PulseBoard</span><span class="rv-entry-date">2025 — Present</span></div>
+          <p class="rv-entry-sub">Next.js · TypeScript · React · TailwindCSS</p>
+          <ul class="rv-list"><li>Real-time system monitoring dashboard — logs, metrics, alerts unified in one developer-first UI.</li></ul>
+        </div>
+      </div>
+
+      <div class="rv-section">
+        <p class="rv-section-title">Skills</p>
+        <div class="rv-skills">
+          <span class="rv-skill">Python</span><span class="rv-skill">Flutter</span><span class="rv-skill">GoLang</span><span class="rv-skill">TypeScript</span><span class="rv-skill">React</span><span class="rv-skill">Next.js</span><span class="rv-skill">MySQL</span><span class="rv-skill">C++</span><span class="rv-skill">HTML/CSS/JS</span><span class="rv-skill">Pandas</span><span class="rv-skill">NumPy</span><span class="rv-skill">Selenium</span><span class="rv-skill">Git</span><span class="rv-skill">Agile</span><span class="rv-skill">MATLAB</span><span class="rv-skill">LabVIEW</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
