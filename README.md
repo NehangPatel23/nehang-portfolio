@@ -8,12 +8,6 @@ Beyond engineering, I've taught design thinking to 1,500+ students and will serv
 
 ---
 
-## Live Portfolio Site 
-
-[https://nehang-portfolio.vercel.app](https://nehang-portfolio.vercel.app)
-
----
-
 ## Tech Stack
 
 | Layer | Detail |
