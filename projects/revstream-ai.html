@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="color-scheme" content="dark light"/>
+<meta name="theme-color" content="#07070A" media="(prefers-color-scheme: dark)"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RevStream AI — Case Study | Nehang Patel</title>
+<meta name="description" content="Dynamic pricing intelligence platform for short-term rental hosts — portfolio KPIs, explainable AI rate recommendations, comp-set analysis, and an interactive pricing calendar. Next.js, Prisma, PostgreSQL."/>
+<meta property="og:title" content="RevStream AI — Case Study | Nehang Patel"/>
+<meta property="og:description" content="Dynamic pricing intelligence platform for short-term rental hosts — portfolio KPIs, explainable AI rate recommendations, comp-set analysis, and an interactive pricing calendar. Next.js, Prisma, PostgreSQL."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://nehang-portfolio.vercel.app/projects/revstream-ai"/>
+<meta property="og:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="RevStream AI — Case Study"/>
+<meta name="twitter:description" content="Dynamic pricing intelligence platform for short-term rental hosts — portfolio KPIs, explainable AI rate recommendations, comp-set analysis, and an interactive pricing calendar. Next.js, Prisma, PostgreSQL."/>
+<meta name="twitter:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<link rel="canonical" href="https://nehang-portfolio.vercel.app/projects/revstream-ai"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%2307070A'/%3E%3Ccircle cx='17' cy='17' r='2.6' fill='%23A78BF5'/%3E%3C/svg%3E"/>
+<script>(function(){try{var t=localStorage.getItem('nehang-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+<link rel="stylesheet" href="../assets/css/case-study.css"/>
+</head>
+<body>
+<div id="progress-bar"></div>
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cur"></div>
+<div id="cur2"></div>
+<a class="skip-link" href="#cs-main">Skip to content</a>
+
+<nav id="nav">
+  <a href="../index.html" class="logo" aria-label="Nehang Patel">
+    <div class="logo-mark"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="8"  x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="8"  x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="17" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="6"  x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="17" x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="17" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="28" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <circle cx="7" cy="8"  r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="17" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="26" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="17" cy="6"  r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="17" cy="17" r="2.6" fill="var(--gold)" opacity="1"/>
+        <circle cx="17" cy="28" r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="27" cy="12" r="2.2" fill="var(--teal)" opacity=".9"/>
+        <circle cx="27" cy="22" r="2.2" fill="var(--teal)" opacity=".9"/>
+      </svg></div>
+    <div class="logo-wordmark">
+      <span class="logo-name">Nehang Patel</span>
+      <span class="logo-sub">Software Engineer</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#exp">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="resume-btn" id="resumeBtn">Resume</button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="../index.html#about" class="dl">About</a>
+  <a href="../index.html#projects" class="dl">Projects</a>
+  <a href="../index.html#exp" class="dl">Experience</a>
+  <a href="../index.html#education" class="dl">Education</a>
+  <a href="../index.html#contact" class="dl">Contact</a>
+  <button class="drawer-resume" id="drawerResumeBtn">Resume</button>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://x.com/itsnehangp_x" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="X"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="mailto:nehangal@usc.edu?subject=Hello%20Nehang&amp;body=Hi%20Nehang%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect.%0A%0A" class="drawer-soc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+  </div>
+</div>
+<main id="cs-main" class="cs-page">
+
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      
+      <a href="../index.html#projects" class="cs-back r">All projects</a>
+      <p class="cs-eyebrow r"><span class="cs-eyebrow-dot"></span>Web · SaaS · In Development</p>
+      <h1 class="cs-title r">RevStream <em>AI</em></h1>
+      <p class="cs-lead r">A dynamic pricing intelligence platform for short-term rental hosts and property managers — unifying portfolio KPIs, confidence-scored rate recommendations, competitive-set analysis, and an interactive pricing calendar into a single operator dashboard.</p>
+      <p class="cs-lead-sub r">RevStream AI helps hosts understand why a price change is suggested, not just what to charge. Each recommendation ships with structured rationale across demand signals, booking pace, comp-set positioning, seasonality, and event impact — built as a production-grade operator UI with deep linking, exports, and PostgreSQL/Prisma scaffolding for real data integration.</p>
+      <div class="cs-meta-grid r"><div class="cs-meta-cell"><p class="cs-meta-label">Role</p><p class="cs-meta-val">Sole designer & developer</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Timeline</p><p class="cs-meta-val">2025 — Present</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Context</p><p class="cs-meta-val">Personal · PropTech · Pricing</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Status</p><p class="cs-meta-val">Active development</p></div></div>
+      <div class="cs-ctas r"><a href="https://github.com/NehangPatel23/RevStream-AI" target="_blank" rel="noopener noreferrer" class="btn btn-g">GitHub</a><a href="../index.html#contact" class="btn btn-g">Contact</a></div>
+    </div>
+  </header>
+
+  <div class="cs-layout">
+    <aside class="cs-toc"><p class="cs-toc-label">On this page</p><a href="#overview">Overview</a><a href="#visual-proof">Visual proof</a><a href="#context">Context</a><a href="#challenge">Challenge</a><a href="#goals">Goals</a><a href="#architecture">Architecture</a><a href="#built">What I built</a><a href="#deep-dives">Deep dives</a><a href="#timeline">Timeline</a><a href="#results">Results</a><a href="#problems">Hard problems</a><a href="#lessons">Lessons</a><a href="#reviewer">Reviewer guide</a><a href="#stack">Stack</a><a href="#next">What's next</a></aside>
+    <div class="cs-content">
+      <div class="cs-metrics"><div class="cs-metric r"><div class="cs-metric-n">3</div><div class="cs-metric-l">Core surfaces</div></div><div class="cs-metric r"><div class="cs-metric-n">AI</div><div class="cs-metric-l">Explainable recs</div></div><div class="cs-metric r"><div class="cs-metric-n">Prisma</div><div class="cs-metric-l">Data layer</div></div><div class="cs-metric r"><div class="cs-metric-n">URL</div><div class="cs-metric-l">Deep linking</div></div></div>
+
+      <section class="cs-section r" id="overview">
+      <div class="cs-section-head"><p class="cs-section-label">Overview</p><h2 class="cs-section-title">At a glance</h2></div>
+      <div class="cs-section-body"><div class="cs-glance"><div class="cs-glance-item r"><p class="cs-glance-label">Product type</p><p class="cs-glance-val">Web · SaaS · Short-term rental pricing</p></div><div class="cs-glance-item r"><p class="cs-glance-label">My contribution</p><p class="cs-glance-val">Product design, operator UX, dashboard architecture, Prisma schema, demo data layer, export flows</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Users</p><p class="cs-glance-val">Airbnb hosts and property managers running multi-listing portfolios</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Stack</p><p class="cs-glance-val">Next.js, React, TypeScript, Tailwind CSS, Prisma, PostgreSQL, Recharts</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="visual-proof">
+      <div class="cs-section-head"><p class="cs-section-label">Visual proof</p><h2 class="cs-section-title">Interface & artifacts</h2></div>
+      <div class="cs-section-body"><p>Screenshots and recordings document key flows. Replace placeholders in <code>assets/projects/case-studies/revstream-ai/</code> when assets are ready.</p><div class="cs-gallery cs-gallery-2"><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · revstream-ai/dashboard.png</div>
+      <figcaption class="cs-gallery-cap">Portfolio dashboard — KPI cards, actual-vs-target revenue chart, and AI recommendation with apply/dismiss flows.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · revstream-ai/detail.png</div>
+      <figcaption class="cs-gallery-cap">Property browser — searchable multi-market grid with 2–4 listing comparison mode.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · revstream-ai/flow.png</div>
+      <figcaption class="cs-gallery-cap">Pricing calendar — month view with booked/event states and day-level detail drawer.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · revstream-ai/mobile.png</div>
+      <figcaption class="cs-gallery-cap">Explanation drawer — confidence score with demand, pace, comp-set, seasonality, and event drivers.</figcaption>
+    </figure></div></div>
+    </section>
+      <section class="cs-section r" id="context">
+      <div class="cs-section-head"><p class="cs-section-label">Context</p><h2 class="cs-section-title">Background & origin</h2></div>
+      <div class="cs-section-body"><p>Short-term rental hosts often price by gut feel or static rules — missing demand spikes, comp-set shifts, and event-driven surges. Managing multiple listings across markets makes it worse: no unified view of portfolio health and no time to tune every calendar manually.</p><p>RevStream AI reimagines that workflow as a data-first operator console: portfolio metrics at a glance, actionable recommendations with transparent reasoning, and calendar-level control with competitor context and configurable pricing rules.</p><blockquote class="cs-quote r">Hosts don't need a black-box price — they need to know why Saturday should cost more than Tuesday.</blockquote></div>
+    </section>
+      <section class="cs-section r" id="challenge">
+      <div class="cs-section-head"><p class="cs-section-label">Problem</p><h2 class="cs-section-title">The challenge</h2></div>
+      <div class="cs-section-body"><p>Pricing UIs fail when they dump numbers without context — or when they hide the model entirely. Operators need confidence scores, driver breakdowns, and the ability to apply, dismiss, or drill into any calendar day without losing their place in the portfolio.</p><p>Multi-property workflows add comparison, filtering, and URL-shareable state across dashboard, property detail, calendar, competitors, and rules tabs — all while the data layer is still being wired from rich demo seed data to live PostgreSQL.</p></div>
+    </section>
+      <section class="cs-section r" id="goals">
+      <div class="cs-section-head"><p class="cs-section-label">Strategy</p><h2 class="cs-section-title">Goals & constraints</h2></div>
+      <div class="cs-section-body"><ul><li>Surface portfolio-level revenue, occupancy, and RevPAR with range filters and trend charts</li><li>Generate confidence-scored rate recommendations with explainable multi-section rationale</li><li>Support searchable property grids, market filters, and 2–4 listing comparison mode</li><li>Ship an interactive pricing calendar with day-level detail drawers and event visualization</li><li>Expose comp-set analysis and a configurable pricing rules engine UI</li><li>Build operator-grade UX: command palette, notifications, deep links, CSV/PDF export</li><li>Scaffold Prisma + PostgreSQL models for users, workspaces, and properties</li></ul></div>
+    </section>
+      <section class="cs-section r" id="architecture">
+      <div class="cs-section-head"><p class="cs-section-label">System</p><h2 class="cs-section-title">Architecture overview</h2></div>
+      <div class="cs-section-body"><p>Next.js App Router powers the main product surface at /dashboard with dynamic [propertyId] routes. Filters, compare selections, date/month, tabs, and actions live in URL search params for shareable operator views.</p><p>Component architecture splits layout shell (DashboardLayout), feature modules (property-detail/, dashboard/, app-shell/), and shared utilities (lib/data/, lib/utils/). The UI runs on realistic seed data in src/lib/data/ while Prisma schema and DB client are wired for backend integration — API routes are the next milestone.</p><div class="cs-arch"><div class="cs-flow"><span>Operator UI</span><span class="cs-arrow">→</span><span>Dashboard</span><span class="cs-arrow">→</span><span>Properties</span><span class="cs-arrow">→</span><span>Property detail</span><span class="cs-arrow">→</span><span>Recommendations</span><span class="cs-arrow">→</span><span>Prisma / PostgreSQL</span></div><div class="cs-arch-list"><div class="cs-arch-item"><strong>Dashboard</strong>KPI cards, portfolio chart, AI rec card, alerts, activity feed</div><div class="cs-arch-item"><strong>Properties</strong>Multi-market grid, search, sort, 2–4 compare mode</div><div class="cs-arch-item"><strong>Property detail</strong>Overview, calendar, competitors, and rules tabs</div><div class="cs-arch-item"><strong>Calendar + drawer</strong>Month view, booked/event states, day-level guidance</div><div class="cs-arch-item"><strong>Explanation engine</strong>Confidence + demand, pace, comps, seasonality, events</div><div class="cs-arch-item"><strong>App shell</strong>Sidebar nav, command palette, notification center, exports</div></div></div></div>
+    </section>
+      <section class="cs-section r" id="built">
+      <div class="cs-section-head"><p class="cs-section-label">Delivery</p><h2 class="cs-section-title">What I built</h2></div>
+      <div class="cs-section-body"><p>Production-quality frontend for a pricing SaaS, with database foundation ready for backend integration.</p><div class="cs-features"><div class="cs-feature r"><p class="cs-feature-title">Portfolio dashboard</p><p class="cs-feature-desc">Total revenue MTD, avg occupancy, RevPAR; actual-vs-target ADR chart with occupancy overlay and 7d/14d/30d filters.</p></div><div class="cs-feature r"><p class="cs-feature-title">Explainable recommendations</p><p class="cs-feature-desc">Confidence-scored rate suggestions with apply/dismiss flows and structured rationale drawers.</p></div><div class="cs-feature r"><p class="cs-feature-title">Property intelligence</p><p class="cs-feature-desc">Searchable portfolio grid across markets; compare 2–4 listings on ADR, occupancy, pace, and signals.</p></div><div class="cs-feature r"><p class="cs-feature-title">Pricing calendar</p><p class="cs-feature-desc">Month view with booked and event states; day detail drawer with context-specific guidance.</p></div><div class="cs-feature r"><p class="cs-feature-title">Comp-set analysis</p><p class="cs-feature-desc">Side-by-side competitor rates, occupancy, and positioning notes per listing.</p></div><div class="cs-feature r"><p class="cs-feature-title">Rules engine UI</p><p class="cs-feature-desc">CRUD for weekend premium, last-minute discount, orphan-day filler — drag-and-drop reorder, pause/activate toggles.</p></div><div class="cs-feature r"><p class="cs-feature-title">Operator UX</p><p class="cs-feature-desc">Command palette, notification center with severity tiers, confirm dialogs, toast feedback, client-side CSV/PDF export.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="deep-dives">
+      <div class="cs-section-head"><p class="cs-section-label">Technical</p><h2 class="cs-section-title">Deep dives</h2></div>
+      <div class="cs-section-body"><h4>URL-driven state</h4><p>Compare mode, calendar month, active tab, and filter state serialize to query params — shareable views without extra backend.</p><h4>Explainability panels</h4><p>Each recommendation decomposes into demand, booking velocity, comp-set, seasonality, and event sections — not a single opaque score.</p><h4>Demo-to-live path</h4><p>Rich seed data in lib/data/ mirrors production shapes; Prisma models User, Workspace, Property ready for API route connection.</p></div>
+    </section>
+      <section class="cs-section r" id="timeline">
+      <div class="cs-section-head"><p class="cs-section-label">Process</p><h2 class="cs-section-title">Timeline & phases</h2></div>
+      <div class="cs-section-body"><div class="cs-timeline"><div class="cs-tl-item"><p class="cs-tl-phase">Product design</p><p class="cs-tl-title">Operator workflows, explainability UX</p><p class="cs-tl-desc">Validated dashboard → property → calendar flow</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Dashboard + properties</p><p class="cs-tl-title">KPIs, charts, grid, compare mode</p><p class="cs-tl-desc">Core portfolio surfaces shipped</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Property detail</p><p class="cs-tl-title">Calendar, competitors, rules tabs</p><p class="cs-tl-desc">Per-listing deep dives with exports</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Data layer</p><p class="cs-tl-title">Prisma schema + PostgreSQL client</p><p class="cs-tl-desc">Backend scaffolding; API integration in progress</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="results">
+      <div class="cs-section-head"><p class="cs-section-label">Impact</p><h2 class="cs-section-title">Results & outcomes</h2></div>
+      <div class="cs-section-body"><p>RevStream AI demonstrates product-grade SaaS UX for a complex domain — even on demo data, the operator workflows are authentic.</p><ul><li>Unified portfolio dashboard replacing spreadsheet-and-gut-feel pricing</li><li>Explainable recommendations with confidence scores and driver breakdowns</li><li>Multi-property comparison and URL-shareable operator views</li><li>Prisma + PostgreSQL foundation ready for live comp-set and event ingestion</li></ul><div class="cs-tags"><span class="cs-tag">Next.js</span><span class="cs-tag">TypeScript</span><span class="cs-tag">React</span><span class="cs-tag">TailwindCSS</span><span class="cs-tag">Prisma</span><span class="cs-tag">PostgreSQL</span><span class="cs-tag">Recharts</span><span class="cs-tag">SaaS</span></div></div>
+    </section>
+      <section class="cs-section r" id="problems">
+      <div class="cs-section-head"><p class="cs-section-label">Engineering</p><h2 class="cs-section-title">Hard problems</h2></div>
+      <div class="cs-section-body"><div class="cs-problems"><div class="cs-problem r"><h4>Explainability vs simplicity</h4><p>Too much rationale overwhelms; too little erodes trust.</p><p class="cs-solution"><strong>Solution →</strong> Layered drawers — summary card first, drill-down sections on demand.</p></div><div class="cs-problem r"><h4>Dense operator UIs</h4><p>Dashboards easily become data dumps.</p><p class="cs-solution"><strong>Solution →</strong> Ruthless hierarchy: KPIs → chart → one primary recommendation → alerts.</p></div><div class="cs-problem r"><h4>Demo data realism</h4><p>Fake numbers feel toy-like in interviews.</p><p class="cs-solution"><strong>Solution →</strong> Seed data mirrors real STR markets (Miami, San Diego, Austin, Nashville) with plausible seasonality and events.</p></div><div class="cs-problem r"><h4>Backend not wired yet</h4><p>UI ahead of API routes risks demo-only perception.</p><p class="cs-solution"><strong>Solution →</strong> Prisma schema and typed data shapes document the integration contract explicitly.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="lessons">
+      <div class="cs-section-head"><p class="cs-section-label">Reflection</p><h2 class="cs-section-title">Lessons learned</h2></div>
+      <div class="cs-section-body"><div class="cs-lessons"><div class="cs-lesson r"><span class="cs-lesson-n">01</span><span>Pricing products live or die on trust — show the why, not just the number.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">02</span><span>URL state is free shareability for operator tools; design query params early.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">03</span><span>Ship the full operator shell even before the model — authentic workflows sell the vision.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="reviewer">
+      <div class="cs-section-head"><p class="cs-section-label">Guide</p><h2 class="cs-section-title">Reviewer walkthrough</h2></div>
+      <div class="cs-section-body"><div class="cs-steps"><div class="cs-step r"><span class="cs-step-n">01</span><p>Browse the <strong>GitHub repo</strong> and run <strong>npm run dev</strong> — open <strong>/dashboard</strong> for the main product surface.</p></div><div class="cs-step r"><span class="cs-step-n">02</span><p>Review a portfolio KPI card and the actual-vs-target revenue chart with range filters.</p></div><div class="cs-step r"><span class="cs-step-n">03</span><p>Select 2–4 properties in comparison mode and contrast ADR, occupancy, and signals.</p></div><div class="cs-step r"><span class="cs-step-n">04</span><p>Open a property calendar, click a day, and read the explanation drawer drivers.</p></div><div class="cs-step r"><span class="cs-step-n">05</span><p>Try the command palette and export a report as CSV or PDF.</p></div><div class="cs-step r"><span class="cs-step-n">06</span><p>Inspect Prisma schema and lib/data/ for the demo-to-live integration path.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="stack">
+      <div class="cs-section-head"><p class="cs-section-label">Stack</p><h2 class="cs-section-title">Technology choices</h2></div>
+      <div class="cs-section-body"><div class="cs-rationale"><div class="cs-rat-item r"><span class="cs-rat-tech">Next.js</span><span class="cs-rat-why">App Router, dynamic routes, server/client component split.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">TypeScript</span><span class="cs-rat-why">Typed property models, recommendation shapes, and rule configs.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Prisma</span><span class="cs-rat-why">PostgreSQL schema for users, workspaces, and properties.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Recharts</span><span class="cs-rat-why">Portfolio trend charts with custom tooltips and range filters.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Tailwind CSS</span><span class="cs-rat-why">Design tokens, Radix/shadcn-style components, responsive operator layout.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="next">
+      <div class="cs-section-head"><p class="cs-section-label">Roadmap</p><h2 class="cs-section-title">What's next</h2></div>
+      <div class="cs-section-body"><p>Wire Prisma to API routes, connect live comp-set and event signal ingestion, deploy a public demo on Vercel, and integrate the pricing model backend behind the explanation engine.</p></div>
+    </section>
+
+      <div class="cs-footer-nav r">
+        <a href="dirscope.html">← Dirscope</a>
+        <a href="../index.html#projects" class="cs-fn-home">All projects</a>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</main>
+<footer><p>© 2026 Nehang Patel</p><div class="footer-right"><a href="../index.html" style="color:var(--muted);font-size:.66rem;text-decoration:none">← Portfolio home</a></div></footer>
+<div id="resumeOverlay" role="dialog" aria-modal="true" aria-label="Nehang Patel — Resume">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <p class="resume-modal-title">Nehang Patel <span>— Resume</span></p>
+      <div class="resume-modal-actions">
+        <a href="../assets/resume/Nehang_Patel_Resume.pdf" download="Nehang_Patel_Resume.pdf" rel="noopener noreferrer" class="resume-dl-btn" id="resumeDlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="resume-close" id="resumeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="resume-body">
+      <div class="rv-header">
+        <h2 class="rv-name">Nehang <span>Patel</span></h2>
+        <div class="rv-meta">
+          <span>Los Angeles, CA</span>
+          <a href="mailto:nehangal@usc.edu">nehangal@usc.edu</a>
+          <a href="https://linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nehangpatel</a>
+          <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer">github.com/NehangPatel23</a>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Education</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Southern California</span><span class="rv-entry-date">Aug 2025 — May 2027</span></div>
+          <p class="rv-entry-sub">MS Computer Science · Viterbi School of Engineering</p>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Cincinnati</span><span class="rv-entry-date">Aug 2020 — May 2025</span></div>
+          <p class="rv-entry-sub">BS Computer Science · Minor: Cyber Operations &amp; Software Engineering</p>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Experience</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">Jan 2024 — Apr 2024</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · West Chester, OH</p>
+          <ul class="rv-list"><li>Refactored web-scraping codebase; built Flutter UI with Golang API integration</li></ul>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Skills</p>
+        <div class="rv-skills">
+          <span class="rv-skill">Python</span><span class="rv-skill">Flutter</span><span class="rv-skill">GoLang</span><span class="rv-skill">TypeScript</span><span class="rv-skill">React</span><span class="rv-skill">Next.js</span><span class="rv-skill">MySQL</span><span class="rv-skill">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/case-study.js" defer></script>
+</body>
+</html>
