@@ -27,3 +27,4 @@ __pycache__/
 
 # Cursor local project state
 .cursor/
+.vercel
