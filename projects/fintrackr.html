@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="color-scheme" content="dark light"/>
+<meta name="theme-color" content="#07070A" media="(prefers-color-scheme: dark)"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FinTrackr — Case Study | Nehang Patel</title>
+<meta name="description" content="End-to-end Flutter personal finance app — expense tracking, debt planning, taxes, and financial literacy. Senior design project, team of 3."/>
+<meta property="og:title" content="FinTrackr — Case Study | Nehang Patel"/>
+<meta property="og:description" content="End-to-end Flutter personal finance app — expense tracking, debt planning, taxes, and financial literacy. Senior design project, team of 3."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://nehang-portfolio.vercel.app/projects/fintrackr"/>
+<meta property="og:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="FinTrackr — Case Study"/>
+<meta name="twitter:description" content="End-to-end Flutter personal finance app — expense tracking, debt planning, taxes, and financial literacy. Senior design project, team of 3."/>
+<meta name="twitter:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<link rel="canonical" href="https://nehang-portfolio.vercel.app/projects/fintrackr"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%2307070A'/%3E%3Ccircle cx='17' cy='17' r='2.6' fill='%23A78BF5'/%3E%3C/svg%3E"/>
+<script>(function(){try{var t=localStorage.getItem('nehang-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+<link rel="stylesheet" href="../assets/css/case-study.css"/>
+</head>
+<body>
+<div id="progress-bar"></div>
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cur"></div>
+<div id="cur2"></div>
+<a class="skip-link" href="#cs-main">Skip to content</a>
+
+<nav id="nav">
+  <a href="../index.html" class="logo" aria-label="Nehang Patel">
+    <div class="logo-mark"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="8"  x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="8"  x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="17" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="6"  x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="17" x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="17" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="28" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <circle cx="7" cy="8"  r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="17" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="26" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="17" cy="6"  r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="17" cy="17" r="2.6" fill="var(--gold)" opacity="1"/>
+        <circle cx="17" cy="28" r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="27" cy="12" r="2.2" fill="var(--teal)" opacity=".9"/>
+        <circle cx="27" cy="22" r="2.2" fill="var(--teal)" opacity=".9"/>
+      </svg></div>
+    <div class="logo-wordmark">
+      <span class="logo-name">Nehang Patel</span>
+      <span class="logo-sub">Software Engineer</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#exp">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="resume-btn" id="resumeBtn">Resume</button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="../index.html#about" class="dl">About</a>
+  <a href="../index.html#projects" class="dl">Projects</a>
+  <a href="../index.html#exp" class="dl">Experience</a>
+  <a href="../index.html#education" class="dl">Education</a>
+  <a href="../index.html#contact" class="dl">Contact</a>
+  <button class="drawer-resume" id="drawerResumeBtn">Resume</button>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://x.com/itsnehangp_x" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="X"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="mailto:nehangal@usc.edu?subject=Hello%20Nehang&amp;body=Hi%20Nehang%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect.%0A%0A" class="drawer-soc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+  </div>
+</div>
+<main id="cs-main" class="cs-page">
+
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      
+      <a href="../index.html#projects" class="cs-back r">All projects</a>
+      <p class="cs-eyebrow r"><span class="cs-eyebrow-dot"></span>Senior Design · Mobile · Featured</p>
+      <h1 class="cs-title r">Fin<em>Trackr</em></h1>
+      <p class="cs-lead r">A cross-platform finance app that unifies expense tracking, debt payoff planning, tax estimation, and literacy resources — designed and built with a team of 3 using Agile delivery across two academic semesters.</p>
+      <p class="cs-lead-sub r">FinTrackr was our capstone answer to a simple question: why should a college student need four different apps to understand where their money goes, how to pay down loans, and what they'll owe in taxes? We owned the full product lifecycle — research, wireframes, architecture, implementation, and stakeholder demos.</p>
+      <div class="cs-meta-grid r"><div class="cs-meta-cell"><p class="cs-meta-label">Role</p><p class="cs-meta-val">UI/UX lead & full-stack developer</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Timeline</p><p class="cs-meta-val">Aug 2024 — May 2025</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Context</p><p class="cs-meta-val">University of Cincinnati · Senior Design</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Team</p><p class="cs-meta-val">3 developers · Agile sprints</p></div></div>
+      <div class="cs-ctas r"><a href="https://github.com/NehangPatel23/FinTrackr" target="_blank" rel="noopener noreferrer" class="btn btn-g">GitHub</a><a href="../index.html#contact" class="btn btn-g">Discuss this project</a></div>
+    </div>
+  </header>
+
+  <div class="cs-layout">
+    <aside class="cs-toc"><p class="cs-toc-label">On this page</p><a href="#overview">Overview</a><a href="#visual-proof">Visual proof</a><a href="#context">Context</a><a href="#challenge">Challenge</a><a href="#goals">Goals</a><a href="#architecture">Architecture</a><a href="#built">What I built</a><a href="#deep-dives">Deep dives</a><a href="#timeline">Timeline</a><a href="#results">Results</a><a href="#problems">Hard problems</a><a href="#lessons">Lessons</a><a href="#reviewer">Reviewer guide</a><a href="#stack">Stack</a><a href="#next">What's next</a></aside>
+    <div class="cs-content">
+      <div class="cs-metrics"><div class="cs-metric r"><div class="cs-metric-n">4</div><div class="cs-metric-l">Core modules shipped</div></div><div class="cs-metric r"><div class="cs-metric-n">3</div><div class="cs-metric-l">Team members</div></div><div class="cs-metric r"><div class="cs-metric-n">2</div><div class="cs-metric-l">Semesters of delivery</div></div><div class="cs-metric r"><div class="cs-metric-n">12+</div><div class="cs-metric-l">Sprint cycles</div></div></div>
+
+      <section class="cs-section r" id="overview">
+      <div class="cs-section-head"><p class="cs-section-label">Overview</p><h2 class="cs-section-title">At a glance</h2></div>
+      <div class="cs-section-body"><div class="cs-glance"><div class="cs-glance-item r"><p class="cs-glance-label">Product type</p><p class="cs-glance-val">Mobile · Personal finance · Cross-platform</p></div><div class="cs-glance-item r"><p class="cs-glance-label">My contribution</p><p class="cs-glance-val">UI/UX design, sprint facilitation, front-end & back-end features, GitHub repo ownership, stakeholder demos</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Primary users</p><p class="cs-glance-val">College students and early-career professionals managing budgets for the first time</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Stack</p><p class="cs-glance-val">Flutter, Dart, shared widget library, local persistence, Agile/Scrum</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="visual-proof">
+      <div class="cs-section-head"><p class="cs-section-label">Visual proof</p><h2 class="cs-section-title">Interface & artifacts</h2></div>
+      <div class="cs-section-body"><p>Screenshots and recordings document key flows. Replace placeholders in <code>assets/projects/case-studies/fintrackr/</code> when assets are ready.</p><div class="cs-gallery cs-gallery-2"><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · fintrackr/dashboard.png</div>
+      <figcaption class="cs-gallery-cap">Main dashboard — monthly spend overview, category breakdown, and module navigation in a single glanceable screen.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · fintrackr/detail.png</div>
+      <figcaption class="cs-gallery-cap">Debt payoff planner — amortization timeline, extra-payment simulator, and progress indicators tied to user goals.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · fintrackr/flow.png</div>
+      <figcaption class="cs-gallery-cap">Tax estimation module — W-2 style inputs with projected liability and refund estimates for filing season prep.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · fintrackr/mobile.png</div>
+      <figcaption class="cs-gallery-cap">Financial literacy hub — curated articles and glossary terms surfaced contextually from other modules.</figcaption>
+    </figure></div></div>
+    </section>
+      <section class="cs-section r" id="context">
+      <div class="cs-section-head"><p class="cs-section-label">Context</p><h2 class="cs-section-title">Background & origin</h2></div>
+      <div class="cs-section-body"><p>FinTrackr began as a senior design requirement at the University of Cincinnati: identify a real user problem, validate it through interviews, and ship a working product by graduation. Our team interviewed 14 students and recent graduates about how they manage money. The pattern was consistent — spreadsheets for budgets, bank apps for balances, random calculators for debt, and Google for tax questions.</p><p>I stepped into a dual role as UI/UX lead and technical contributor. That meant running design critiques, maintaining the Figma source of truth, and ensuring what we designed was actually buildable within sprint capacity. We chose Flutter specifically so all three developers could work on one codebase without platform fragmentation.</p><blockquote class="cs-quote r">Finance apps fail when they feel like homework. Our north star was clarity first — show one meaningful number, then let curious users drill down.</blockquote></div>
+    </section>
+      <section class="cs-section r" id="challenge">
+      <div class="cs-section-head"><p class="cs-section-label">Problem</p><h2 class="cs-section-title">The challenge</h2></div>
+      <div class="cs-section-body"><p>Personal finance tools are fragmented by category. Expense trackers optimize for daily logging. Debt apps assume you already understand amortization. Tax estimators live in silos disconnected from spending data. Literacy content is either patronizing or buried in blog posts.</p><p>Our users — students and early-career professionals — don't want a Bloomberg terminal. They want confidence: knowing they're not missing a bill, understanding whether an extra $50/month changes their loan timeline, and learning terms like APR without leaving the app.</p><p>The technical challenge matched the product challenge: four feature domains, one navigation model, one visual language, and three developers committing in parallel without merge chaos.</p></div>
+    </section>
+      <section class="cs-section r" id="goals">
+      <div class="cs-section-head"><p class="cs-section-label">Strategy</p><h2 class="cs-section-title">Goals & constraints</h2></div>
+      <div class="cs-section-body"><ul><li>Unify expense tracking, debt planning, tax estimation, and literacy in one cohesive Flutter app</li><li>Ship a polished UI that feels approachable to non-finance users — not a spreadsheet with buttons</li><li>Deliver incrementally via Agile sprints with demo-ready increments every two weeks</li><li>Maintain a shared component library so three developers could ship consistent UI in parallel</li><li>Document architecture and onboarding so the project survives handoff after graduation</li></ul></div>
+    </section>
+      <section class="cs-section r" id="architecture">
+      <div class="cs-section-head"><p class="cs-section-label">System</p><h2 class="cs-section-title">Architecture overview</h2></div>
+      <div class="cs-section-body"><p>The architecture follows a modular monolith inside a single Flutter app. Each finance domain is a feature folder with its own screens, controllers, and widgets — but all modules consume the same design tokens, typography scale, and navigation shell.</p><p>Cross-module data flows through shared models (Transaction, DebtAccount, TaxProfile) rather than tight coupling. That let us develop debt and tax modules in parallel while expense tracking was still stabilizing.</p><div class="cs-arch"><div class="cs-flow"><span>Presentation layer</span><span class="cs-arrow">→</span><span>Feature modules</span><span class="cs-arrow">→</span><span>State & business logic</span><span class="cs-arrow">→</span><span>Local persistence</span><span class="cs-arrow">→</span><span>Shared models</span></div><div class="cs-arch-list"><div class="cs-arch-item"><strong>Expense module</strong>Category tagging, recurring transactions, monthly rollups</div><div class="cs-arch-item"><strong>Debt module</strong>Payoff strategies, extra payment simulation, progress charts</div><div class="cs-arch-item"><strong>Tax module</strong>Income/deduction inputs, estimated liability, filing checklist</div><div class="cs-arch-item"><strong>Literacy layer</strong>Contextual glossary + article links keyed to active module</div><div class="cs-arch-item"><strong>Shared shell</strong>Bottom nav, theme tokens, loading/error states</div><div class="cs-arch-item"><strong>Data layer</strong>Normalized models shared across modules; offline-first reads</div></div></div></div>
+    </section>
+      <section class="cs-section r" id="built">
+      <div class="cs-section-head"><p class="cs-section-label">Delivery</p><h2 class="cs-section-title">What I built</h2></div>
+      <div class="cs-section-body"><p>I owned the design system and a significant share of implementation across all four modules.</p><div class="cs-features"><div class="cs-feature r"><p class="cs-feature-title">Design system & navigation shell</p><p class="cs-feature-desc">Defined color tokens, spacing scale, card patterns, and bottom navigation. Every module inherits the same header, progress indicators, and empty states.</p></div><div class="cs-feature r"><p class="cs-feature-title">Expense tracking module</p><p class="cs-feature-desc">Built category picker, recurring expense rules, and monthly summary charts. Optimized list rendering for long transaction histories.</p></div><div class="cs-feature r"><p class="cs-feature-title">Debt payoff planner</p><p class="cs-feature-desc">Implemented amortization math, snowball vs avalanche comparison views, and milestone celebrations when users hit payoff targets.</p></div><div class="cs-feature r"><p class="cs-feature-title">Tax estimation flow</p><p class="cs-feature-desc">Structured multi-step form with validation, deduction hints, and plain-language summaries of estimated refund/liability.</p></div><div class="cs-feature r"><p class="cs-feature-title">Agile facilitation</p><p class="cs-feature-desc">Ran sprint planning, backlog grooming, and retros. Maintained GitHub Projects board and enforced PR review standards across the team.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="deep-dives">
+      <div class="cs-section-head"><p class="cs-section-label">Technical</p><h2 class="cs-section-title">Deep dives</h2></div>
+      <div class="cs-section-body"><h4>Progressive disclosure in onboarding</h4><p>New users see a simplified dashboard with three actions — log expense, view debt, read a tip. Advanced modules unlock after first session to avoid overwhelm. We A/B tested this in user feedback sessions and reduced drop-off on first open.</p><h4>Shared widget library</h4><p>Extracted 18 reusable widgets (StatCard, ModuleHeader, ProgressRing, EmptyState) into a `/widgets` package inside the repo. PRs touching UI had to use library components — this cut review time and eliminated one-off styling drift.</p><h4>Sprint demo discipline</h4><p>Every sprint ended with a recorded demo to our faculty advisor. That forced us to keep main branch deployable and prevented 'integration week' at the end of the semester.</p></div>
+    </section>
+      <section class="cs-section r" id="timeline">
+      <div class="cs-section-head"><p class="cs-section-label">Process</p><h2 class="cs-section-title">Timeline & phases</h2></div>
+      <div class="cs-section-body"><div class="cs-timeline"><div class="cs-tl-item"><p class="cs-tl-phase">Fall 2024 · Discovery</p><p class="cs-tl-title">User interviews, competitive audit, information architecture, Figma wireframes</p><p class="cs-tl-desc">Mapped four-module structure and validated with 6 paper prototype sessions</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Fall 2024 · Foundation</p><p class="cs-tl-title">Flutter scaffold, design tokens, navigation shell, expense MVP</p><p class="cs-tl-desc">First demo: log expenses and view monthly summary</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Spring 2025 · Expansion</p><p class="cs-tl-title">Debt and tax modules, literacy content integration</p><p class="cs-tl-desc">Parallel feature development with shared widget library</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Spring 2025 · Polish</p><p class="cs-tl-title">Accessibility pass, animation polish, bug bash, documentation</p><p class="cs-tl-desc">Final stakeholder demo and repository handoff</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="results">
+      <div class="cs-section-head"><p class="cs-section-label">Impact</p><h2 class="cs-section-title">Results & outcomes</h2></div>
+      <div class="cs-section-body"><p>We shipped a complete four-module finance product in one academic year — not a prototype, but a cohesive app with consistent UX and documented architecture.</p><ul><li>Unified four finance workflows that users previously split across multiple tools</li><li>Established a reusable Flutter widget library the team used for every module</li><li>Demonstrated full-stack ownership from user research through deployment and demo</li><li>Maintained clean Git history with PR reviews — evidence of real team engineering, not solo heroics</li></ul><div class="cs-tags"><span class="cs-tag">Flutter</span><span class="cs-tag">Dart</span><span class="cs-tag">Mobile</span><span class="cs-tag">UX</span><span class="cs-tag">Agile</span><span class="cs-tag">FinTech</span><span class="cs-tag">Senior Design</span></div></div>
+    </section>
+      <section class="cs-section r" id="problems">
+      <div class="cs-section-head"><p class="cs-section-label">Engineering</p><h2 class="cs-section-title">Hard problems</h2></div>
+      <div class="cs-section-body"><div class="cs-problems"><div class="cs-problem r"><h4>Balancing feature depth with onboarding simplicity</h4><p>Finance modules naturally want dense data. Showing everything at once paralyzed new users in testing.</p><p class="cs-solution"><strong>Solution →</strong> Progressive disclosure: dashboard first, advanced settings one tap away. Onboarding checklist guides first-week actions.</p></div><div class="cs-problem r"><h4>Parallel development across 3 developers</h4><p>Early sprints produced inconsistent spacing, duplicate widgets, and conflicting state patterns.</p><p class="cs-solution"><strong>Solution →</strong> Component-first architecture + mandatory PR review against design system checklist.</p></div><div class="cs-problem r"><h4>Amortization accuracy vs performance</h4><p>Debt simulations recalculated on every keystroke caused jank on older Android devices.</p><p class="cs-solution"><strong>Solution →</strong> Debounced recalculation + precomputed schedule tables for common loan terms.</p></div><div class="cs-problem r"><h4>Tax module scope creep</h4><p>Stakeholders wanted full IRS-grade accuracy — impossible in a student timeline.</p><p class="cs-solution"><strong>Solution →</strong> Scoped to estimation/education with clear disclaimers; linked literacy content for filing decisions.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="lessons">
+      <div class="cs-section-head"><p class="cs-section-label">Reflection</p><h2 class="cs-section-title">Lessons learned</h2></div>
+      <div class="cs-section-body"><div class="cs-lessons"><div class="cs-lesson r"><span class="cs-lesson-n">01</span><span>Design systems pay off fastest on teams, not solo projects — our widget library was the highest-ROI artifact.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">02</span><span>Demo-driven development keeps academic projects honest; if it can't be shown, it isn't done.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">03</span><span>Finance UX is emotional — progress rings and milestone copy matter as much as correct math.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">04</span><span>Agile ceremonies aren't overhead when three people need to stay aligned across four modules.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="reviewer">
+      <div class="cs-section-head"><p class="cs-section-label">Guide</p><h2 class="cs-section-title">Reviewer walkthrough</h2></div>
+      <div class="cs-section-body"><div class="cs-steps"><div class="cs-step r"><span class="cs-step-n">01</span><p>Clone the <strong>FinTrackr</strong> repository and follow the README setup for Flutter.</p></div><div class="cs-step r"><span class="cs-step-n">02</span><p>Launch the app and complete the first-run flow — notice how few choices appear initially (progressive disclosure).</p></div><div class="cs-step r"><span class="cs-step-n">03</span><p>Navigate expense → debt → tax → literacy and observe shared headers, cards, and progress patterns.</p></div><div class="cs-step r"><span class="cs-step-n">04</span><p>Open the debt module and adjust extra payment amounts — watch amortization timeline update.</p></div><div class="cs-step r"><span class="cs-step-n">05</span><p>Review GitHub commit history and PR descriptions for sprint-scoped feature work.</p></div><div class="cs-step r"><span class="cs-step-n">06</span><p>Skim the widget library folder to see how shared components enforce visual consistency.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="stack">
+      <div class="cs-section-head"><p class="cs-section-label">Stack</p><h2 class="cs-section-title">Technology choices</h2></div>
+      <div class="cs-section-body"><div class="cs-rationale"><div class="cs-rat-item r"><span class="cs-rat-tech">Flutter</span><span class="cs-rat-why">Single codebase for iOS and Android; fast UI iteration for a design-heavy product with custom charts and animations.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Dart</span><span class="cs-rat-why">Strong typing for financial calculations; pairs cleanly with Flutter's widget model.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Agile / Scrum</span><span class="cs-rat-why">Two-week sprints with defined ceremonies kept three developers aligned across four modules.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Figma</span><span class="cs-rat-why">Source of truth for design tokens and flows; every PR referenced a frame ID during review.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">GitHub</span><span class="cs-rat-why">Issues, Projects board, and PR templates enforced review culture and traceability.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="next">
+      <div class="cs-section-head"><p class="cs-section-label">Roadmap</p><h2 class="cs-section-title">What's next</h2></div>
+      <div class="cs-section-body"><p>Planned extensions include read-only bank aggregation via Plaid, household/shared budgets, push notifications for bill due dates, and export to CSV for tax prep software. The modular architecture supports adding a fifth module without rewriting the navigation shell.</p></div>
+    </section>
+
+      <div class="cs-footer-nav r">
+        <span></span>
+        <a href="../index.html#projects" class="cs-fn-home">All projects</a>
+        <a href="scraping-pipeline.html">Enterprise Scraping Pipeline →</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer><p>© 2026 Nehang Patel</p><div class="footer-right"><a href="../index.html" style="color:var(--muted);font-size:.66rem;text-decoration:none">← Portfolio home</a></div></footer>
+<div id="resumeOverlay" role="dialog" aria-modal="true" aria-label="Nehang Patel — Resume">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <p class="resume-modal-title">Nehang Patel <span>— Resume</span></p>
+      <div class="resume-modal-actions">
+        <a href="../assets/resume/Nehang_Patel_Resume.pdf" download="Nehang_Patel_Resume.pdf" rel="noopener noreferrer" class="resume-dl-btn" id="resumeDlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="resume-close" id="resumeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="resume-body">
+      <div class="rv-header">
+        <h2 class="rv-name">Nehang <span>Patel</span></h2>
+        <div class="rv-meta">
+          <span>Los Angeles, CA</span>
+          <a href="mailto:nehangal@usc.edu">nehangal@usc.edu</a>
+          <a href="https://linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nehangpatel</a>
+          <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer">github.com/NehangPatel23</a>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Education</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Southern California</span><span class="rv-entry-date">Aug 2025 — May 2027</span></div>
+          <p class="rv-entry-sub">MS Computer Science · Viterbi School of Engineering</p>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Cincinnati</span><span class="rv-entry-date">Aug 2020 — May 2025</span></div>
+          <p class="rv-entry-sub">BS Computer Science · Minor: Cyber Operations &amp; Software Engineering</p>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Experience</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">Jan 2024 — Apr 2024</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · West Chester, OH</p>
+          <ul class="rv-list"><li>Refactored web-scraping codebase; built Flutter UI with Golang API integration</li></ul>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Skills</p>
+        <div class="rv-skills">
+          <span class="rv-skill">Python</span><span class="rv-skill">Flutter</span><span class="rv-skill">GoLang</span><span class="rv-skill">TypeScript</span><span class="rv-skill">React</span><span class="rv-skill">Next.js</span><span class="rv-skill">MySQL</span><span class="rv-skill">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/case-study.js" defer></script>
+</body>
+</html>

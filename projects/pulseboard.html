@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="color-scheme" content="dark light"/>
+<meta name="theme-color" content="#07070A" media="(prefers-color-scheme: dark)"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PulseBoard — Case Study | Nehang Patel</title>
+<meta name="description" content="Real-time system monitoring dashboard unifying logs, metrics, and alerts — Next.js, TypeScript, developer-first UX."/>
+<meta property="og:title" content="PulseBoard — Case Study | Nehang Patel"/>
+<meta property="og:description" content="Real-time system monitoring dashboard unifying logs, metrics, and alerts — Next.js, TypeScript, developer-first UX."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://nehang-portfolio.vercel.app/projects/pulseboard"/>
+<meta property="og:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="PulseBoard — Case Study"/>
+<meta name="twitter:description" content="Real-time system monitoring dashboard unifying logs, metrics, and alerts — Next.js, TypeScript, developer-first UX."/>
+<meta name="twitter:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<link rel="canonical" href="https://nehang-portfolio.vercel.app/projects/pulseboard"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%2307070A'/%3E%3Ccircle cx='17' cy='17' r='2.6' fill='%23A78BF5'/%3E%3C/svg%3E"/>
+<script>(function(){try{var t=localStorage.getItem('nehang-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+<link rel="stylesheet" href="../assets/css/case-study.css"/>
+</head>
+<body>
+<div id="progress-bar"></div>
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cur"></div>
+<div id="cur2"></div>
+<a class="skip-link" href="#cs-main">Skip to content</a>
+
+<nav id="nav">
+  <a href="../index.html" class="logo" aria-label="Nehang Patel">
+    <div class="logo-mark"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="8"  x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="8"  x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="17" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="6"  x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="17" x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="17" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="28" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <circle cx="7" cy="8"  r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="17" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="26" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="17" cy="6"  r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="17" cy="17" r="2.6" fill="var(--gold)" opacity="1"/>
+        <circle cx="17" cy="28" r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="27" cy="12" r="2.2" fill="var(--teal)" opacity=".9"/>
+        <circle cx="27" cy="22" r="2.2" fill="var(--teal)" opacity=".9"/>
+      </svg></div>
+    <div class="logo-wordmark">
+      <span class="logo-name">Nehang Patel</span>
+      <span class="logo-sub">Software Engineer</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#exp">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="resume-btn" id="resumeBtn">Resume</button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="../index.html#about" class="dl">About</a>
+  <a href="../index.html#projects" class="dl">Projects</a>
+  <a href="../index.html#exp" class="dl">Experience</a>
+  <a href="../index.html#education" class="dl">Education</a>
+  <a href="../index.html#contact" class="dl">Contact</a>
+  <button class="drawer-resume" id="drawerResumeBtn">Resume</button>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://x.com/itsnehangp_x" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="X"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="mailto:nehangal@usc.edu?subject=Hello%20Nehang&amp;body=Hi%20Nehang%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect.%0A%0A" class="drawer-soc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+  </div>
+</div>
+<main id="cs-main" class="cs-page">
+
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      
+      <a href="../index.html#projects" class="cs-back r">All projects</a>
+      <p class="cs-eyebrow r"><span class="cs-eyebrow-dot"></span>Web · DevTools · In Development</p>
+      <h1 class="cs-title r">Pulse<em>Board</em></h1>
+      <p class="cs-lead r">A real-time system monitoring dashboard that unifies logs, metrics, and alerts into one developer-friendly interface — visualizing CPU, memory, and disk live while keeping signal high and noise low.</p>
+      <p class="cs-lead-sub r">PulseBoard is my answer to monitoring sprawl: engineers shouldn't need three browser tabs and a grep terminal to understand if a service is healthy. Built with Next.js App Router and a component architecture optimized for clarity under pressure.</p>
+      <div class="cs-meta-grid r"><div class="cs-meta-cell"><p class="cs-meta-label">Role</p><p class="cs-meta-val">Sole designer & developer</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Timeline</p><p class="cs-meta-val">2025 — Present</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Context</p><p class="cs-meta-val">Personal · DevTools</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Status</p><p class="cs-meta-val">Active development</p></div></div>
+      <div class="cs-ctas r"><a href="../index.html#contact" class="btn btn-g">Request repo access</a></div>
+    </div>
+  </header>
+
+  <div class="cs-layout">
+    <aside class="cs-toc"><p class="cs-toc-label">On this page</p><a href="#overview">Overview</a><a href="#visual-proof">Visual proof</a><a href="#context">Context</a><a href="#challenge">Challenge</a><a href="#goals">Goals</a><a href="#architecture">Architecture</a><a href="#built">What I built</a><a href="#deep-dives">Deep dives</a><a href="#timeline">Timeline</a><a href="#results">Results</a><a href="#problems">Hard problems</a><a href="#lessons">Lessons</a><a href="#reviewer">Reviewer guide</a><a href="#stack">Stack</a><a href="#next">What's next</a></aside>
+    <div class="cs-content">
+      <div class="cs-metrics"><div class="cs-metric r"><div class="cs-metric-n">3-in-1</div><div class="cs-metric-l">Logs · metrics · alerts</div></div><div class="cs-metric r"><div class="cs-metric-n">Live</div><div class="cs-metric-l">Streaming metrics</div></div><div class="cs-metric r"><div class="cs-metric-n">Next.js</div><div class="cs-metric-l">App Router</div></div><div class="cs-metric r"><div class="cs-metric-n">Custom</div><div class="cs-metric-l">Alert rules</div></div></div>
+
+      <section class="cs-section r" id="overview">
+      <div class="cs-section-head"><p class="cs-section-label">Overview</p><h2 class="cs-section-title">At a glance</h2></div>
+      <div class="cs-section-body"><div class="cs-glance"><div class="cs-glance-item r"><p class="cs-glance-label">Product type</p><p class="cs-glance-val">Web · Observability · Developer tools</p></div><div class="cs-glance-item r"><p class="cs-glance-label">My contribution</p><p class="cs-glance-val">Product design, front-end architecture, metrics visualization, alert rule UX</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Philosophy</p><p class="cs-glance-val">Clarity over density — show what matters when incidents happen</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Stack</p><p class="cs-glance-val">Next.js, TypeScript, React, TailwindCSS</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="visual-proof">
+      <div class="cs-section-head"><p class="cs-section-label">Visual proof</p><h2 class="cs-section-title">Interface & artifacts</h2></div>
+      <div class="cs-section-body"><p>Screenshots and recordings document key flows. Replace placeholders in <code>assets/projects/case-studies/pulseboard/</code> when assets are ready.</p><div class="cs-gallery cs-gallery-2"><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · pulseboard/dashboard.png</div>
+      <figcaption class="cs-gallery-cap">Overview — service health cards with CPU, memory, disk sparklines.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · pulseboard/detail.png</div>
+      <figcaption class="cs-gallery-cap">Log stream — filtered live tail with severity color coding.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · pulseboard/flow.png</div>
+      <figcaption class="cs-gallery-cap">Alert panel — active incidents, ack state, and rule configuration.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · pulseboard/mobile.png</div>
+      <figcaption class="cs-gallery-cap">Trend analysis — historical metrics with zoom and comparison windows.</figcaption>
+    </figure></div></div>
+    </section>
+      <section class="cs-section r" id="context">
+      <div class="cs-section-head"><p class="cs-section-label">Context</p><h2 class="cs-section-title">Background & origin</h2></div>
+      <div class="cs-section-body"><p>Observability tools often optimize for power users at the expense of approachability — or they simplify so much they hide the logs you need during an incident. PulseBoard targets the middle: a single pane for on-call engineers who need fast answers.</p><p>The project is actively evolving. Repository access is available on request while core architecture stabilizes.</p><blockquote class="cs-quote r">When pages are down, UI clarity is infrastructure. Every second spent parsing a chart is a second not spent fixing the issue.</blockquote></div>
+    </section>
+      <section class="cs-section r" id="challenge">
+      <div class="cs-section-head"><p class="cs-section-label">Problem</p><h2 class="cs-section-title">The challenge</h2></div>
+      <div class="cs-section-body"><p>Logs, metrics, and alerts live in different mental models — timestamps vs aggregations vs thresholds. Unifying them without overload means ruthless hierarchy: what's red, what's trending, what's noise.</p><p>Real-time data implies streaming updates, chart performance, and alert state that doesn't flicker when metrics bounce at the threshold edge.</p></div>
+    </section>
+      <section class="cs-section r" id="goals">
+      <div class="cs-section-head"><p class="cs-section-label">Strategy</p><h2 class="cs-section-title">Goals & constraints</h2></div>
+      <div class="cs-section-body"><ul><li>Unify logs, metrics, and alerts in one Next.js dashboard</li><li>Visualize CPU, memory, and disk with live updates and historical trends</li><li>Support customizable alert rules with clear ack/resolve flows</li><li>Prioritize UX clarity — readable under stress, not just pretty in screenshots</li><li>Component architecture that supports plugging real backends later</li></ul></div>
+    </section>
+      <section class="cs-section r" id="architecture">
+      <div class="cs-section-head"><p class="cs-section-label">System</p><h2 class="cs-section-title">Architecture overview</h2></div>
+      <div class="cs-section-body"><p>Next.js App Router separates server and client components — static shell server-rendered, charts and log tail client-side with streaming hooks.</p><p>Alert rules are data-driven JSON configs rendered into UI forms, so adding rule types doesn't require new pages.</p><div class="cs-arch"><div class="cs-flow"><span>Next.js UI</span><span class="cs-arrow">→</span><span>Client hooks</span><span class="cs-arrow">→</span><span>Stream adapters</span><span class="cs-arrow">→</span><span>Metrics store</span><span class="cs-arrow">→</span><span>Alert engine</span></div><div class="cs-arch-list"><div class="cs-arch-item"><strong>Overview</strong>Service cards, health summary, quick filters</div><div class="cs-arch-item"><strong>Log viewer</strong>Tail, search, severity filters</div><div class="cs-arch-item"><strong>Metrics charts</strong>CPU/memory/disk live + historical</div><div class="cs-arch-item"><strong>Alerts</strong>Rule builder, incident list, ack workflow</div><div class="cs-arch-item"><strong>Trend analysis</strong>Comparative time windows</div><div class="cs-arch-item"><strong>Layout shell</strong>Responsive grid, collapsible panels</div></div></div></div>
+    </section>
+      <section class="cs-section r" id="built">
+      <div class="cs-section-head"><p class="cs-section-label">Delivery</p><h2 class="cs-section-title">What I built</h2></div>
+      <div class="cs-section-body"><p>End-to-end product and engineering ownership.</p><div class="cs-features"><div class="cs-feature r"><p class="cs-feature-title">Unified dashboard shell</p><p class="cs-feature-desc">Persistent layout with service selector, time range, and alert badge in header.</p></div><div class="cs-feature r"><p class="cs-feature-title">Live metrics charts</p><p class="cs-feature-desc">Streaming CPU/memory/disk with downsampling for render performance.</p></div><div class="cs-feature r"><p class="cs-feature-title">Log tail interface</p><p class="cs-feature-desc">Severity colors, substring search, pause/resume for incident capture.</p></div><div class="cs-feature r"><p class="cs-feature-title">Alert rule builder</p><p class="cs-feature-desc">Threshold conditions with preview of what would have fired historically.</p></div><div class="cs-feature r"><p class="cs-feature-title">Trend analysis views</p><p class="cs-feature-desc">Compare current window to previous period for anomaly context.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="deep-dives">
+      <div class="cs-section-head"><p class="cs-section-label">Technical</p><h2 class="cs-section-title">Deep dives</h2></div>
+      <div class="cs-section-body"><h4>Chart performance</h4><p>Canvas-based rendering with capped point counts; older points aggregated server-side in future backend.</p><h4>Alert hysteresis</h4><p>Rules require N consecutive breaches before firing — stops pager storms on flaky metrics.</p><h4>Incident-mode layout</h4><p>Collapses secondary panels by default when critical alerts active — logs + primary metric front and center.</p></div>
+    </section>
+      <section class="cs-section r" id="timeline">
+      <div class="cs-section-head"><p class="cs-section-label">Process</p><h2 class="cs-section-title">Timeline & phases</h2></div>
+      <div class="cs-section-body"><div class="cs-timeline"><div class="cs-tl-item"><p class="cs-tl-phase">MVP</p><p class="cs-tl-title">Static metrics mock + layout shell</p><p class="cs-tl-desc">Prove navigation and visual hierarchy</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Streaming</p><p class="cs-tl-title">Live metric hooks + log tail</p><p class="cs-tl-desc">Real-time feel with simulated feeds</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Alerts</p><p class="cs-tl-title">Rule builder + incident list</p><p class="cs-tl-desc">End-to-end alert lifecycle UX</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Next</p><p class="cs-tl-title">Backend integration + auth</p><p class="cs-tl-desc">Production-ready deployment path</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="results">
+      <div class="cs-section-head"><p class="cs-section-label">Impact</p><h2 class="cs-section-title">Results & outcomes</h2></div>
+      <div class="cs-section-body"><p>PulseBoard demonstrates observability UX craft — even with simulated data, the incident workflows are real.</p><ul><li>Single interface replacing three-tab monitoring workflows</li><li>Custom alert rules with understandable builder UX</li><li>Component library reusable for future DevTools projects</li><li>Architecture ready for Prometheus/Loki-style backends</li></ul><div class="cs-tags"><span class="cs-tag">Next.js</span><span class="cs-tag">TypeScript</span><span class="cs-tag">DevTools</span><span class="cs-tag">Monitoring</span><span class="cs-tag">React</span><span class="cs-tag">TailwindCSS</span></div></div>
+    </section>
+      <section class="cs-section r" id="problems">
+      <div class="cs-section-head"><p class="cs-section-label">Engineering</p><h2 class="cs-section-title">Hard problems</h2></div>
+      <div class="cs-section-body"><div class="cs-problems"><div class="cs-problem r"><h4>Real-time UI jitter</h4><p>Raw metric streams cause chart flicker.</p><p class="cs-solution"><strong>Solution →</strong> Downsampling + hysteresis on alert thresholds.</p></div><div class="cs-problem r"><h4>Log volume overwhelm</h4><p>Thousands of lines obscure the error that matters.</p><p class="cs-solution"><strong>Solution →</strong> Default filters: errors/warnings first; search pinned near tail.</p></div><div class="cs-problem r"><h4>Scope creep into full APM</h4><p>Easy to rebuild Datadog.</p><p class="cs-solution"><strong>Solution →</strong> Focused MVP: three metric types, tail logs, threshold alerts.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="lessons">
+      <div class="cs-section-head"><p class="cs-section-label">Reflection</p><h2 class="cs-section-title">Lessons learned</h2></div>
+      <div class="cs-section-body"><div class="cs-lessons"><div class="cs-lesson r"><span class="cs-lesson-n">01</span><span>Design dashboards for incidents, not demos — dark theme and contrast matter at 2am.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">02</span><span>Alert UX is product work: ack, silence, and resolve must be one gesture away.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">03</span><span>Simulated data is fine if workflows are authentic.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="reviewer">
+      <div class="cs-section-head"><p class="cs-section-label">Guide</p><h2 class="cs-section-title">Reviewer walkthrough</h2></div>
+      <div class="cs-section-body"><div class="cs-steps"><div class="cs-step r"><span class="cs-step-n">01</span><p>Contact me for a private demo or repository access.</p></div><div class="cs-step r"><span class="cs-step-n">02</span><p>Ask about the alert hysteresis model — it's a good systems design discussion.</p></div><div class="cs-step r"><span class="cs-step-n">03</span><p>Compare layout behavior with and without active critical alerts.</p></div><div class="cs-step r"><span class="cs-step-n">04</span><p>Review component boundaries in the repo for Next.js App Router patterns.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="stack">
+      <div class="cs-section-head"><p class="cs-section-label">Stack</p><h2 class="cs-section-title">Technology choices</h2></div>
+      <div class="cs-section-body"><div class="cs-rationale"><div class="cs-rat-item r"><span class="cs-rat-tech">Next.js</span><span class="cs-rat-why">App Router for layout shells and hybrid server/client rendering.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">TypeScript</span><span class="cs-rat-why">Typed metric points, log entries, and alert rules.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">React</span><span class="cs-rat-why">Component composition for dashboard panels.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">TailwindCSS</span><span class="cs-rat-why">Rapid layout iteration and consistent spacing under dense data.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="next">
+      <div class="cs-section-head"><p class="cs-section-label">Roadmap</p><h2 class="cs-section-title">What's next</h2></div>
+      <div class="cs-section-body"><p>Integrating Prometheus and Loki backends, adding auth/multi-tenant service lists, and shipping a public read-only demo instance.</p></div>
+    </section>
+
+      <div class="cs-footer-nav r">
+        <a href="coursearc.html">← CourseArc</a>
+        <a href="../index.html#projects" class="cs-fn-home">All projects</a>
+        <a href="moodboard-ai.html">MoodBoard AI →</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer><p>© 2026 Nehang Patel</p><div class="footer-right"><a href="../index.html" style="color:var(--muted);font-size:.66rem;text-decoration:none">← Portfolio home</a></div></footer>
+<div id="resumeOverlay" role="dialog" aria-modal="true" aria-label="Nehang Patel — Resume">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <p class="resume-modal-title">Nehang Patel <span>— Resume</span></p>
+      <div class="resume-modal-actions">
+        <a href="../assets/resume/Nehang_Patel_Resume.pdf" download="Nehang_Patel_Resume.pdf" rel="noopener noreferrer" class="resume-dl-btn" id="resumeDlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="resume-close" id="resumeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="resume-body">
+      <div class="rv-header">
+        <h2 class="rv-name">Nehang <span>Patel</span></h2>
+        <div class="rv-meta">
+          <span>Los Angeles, CA</span>
+          <a href="mailto:nehangal@usc.edu">nehangal@usc.edu</a>
+          <a href="https://linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nehangpatel</a>
+          <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer">github.com/NehangPatel23</a>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Education</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Southern California</span><span class="rv-entry-date">Aug 2025 — May 2027</span></div>
+          <p class="rv-entry-sub">MS Computer Science · Viterbi School of Engineering</p>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Cincinnati</span><span class="rv-entry-date">Aug 2020 — May 2025</span></div>
+          <p class="rv-entry-sub">BS Computer Science · Minor: Cyber Operations &amp; Software Engineering</p>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Experience</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">Jan 2024 — Apr 2024</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · West Chester, OH</p>
+          <ul class="rv-list"><li>Refactored web-scraping codebase; built Flutter UI with Golang API integration</li></ul>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Skills</p>
+        <div class="rv-skills">
+          <span class="rv-skill">Python</span><span class="rv-skill">Flutter</span><span class="rv-skill">GoLang</span><span class="rv-skill">TypeScript</span><span class="rv-skill">React</span><span class="rv-skill">Next.js</span><span class="rv-skill">MySQL</span><span class="rv-skill">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/case-study.js" defer></script>
+</body>
+</html>

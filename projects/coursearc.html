@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="color-scheme" content="dark light"/>
+<meta name="theme-color" content="#07070A" media="(prefers-color-scheme: dark)"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CourseArc — Case Study | Nehang Patel</title>
+<meta name="description" content="Full-stack Canvas LMS reimagining with React, Vite, TypeScript, TailwindCSS, and ShadCN/UI — dark/light mode, modular architecture, live demo."/>
+<meta property="og:title" content="CourseArc — Case Study | Nehang Patel"/>
+<meta property="og:description" content="Full-stack Canvas LMS reimagining with React, Vite, TypeScript, TailwindCSS, and ShadCN/UI — dark/light mode, modular architecture, live demo."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://nehang-portfolio.vercel.app/projects/coursearc"/>
+<meta property="og:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="CourseArc — Case Study"/>
+<meta name="twitter:description" content="Full-stack Canvas LMS reimagining with React, Vite, TypeScript, TailwindCSS, and ShadCN/UI — dark/light mode, modular architecture, live demo."/>
+<meta name="twitter:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<link rel="canonical" href="https://nehang-portfolio.vercel.app/projects/coursearc"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%2307070A'/%3E%3Ccircle cx='17' cy='17' r='2.6' fill='%23A78BF5'/%3E%3C/svg%3E"/>
+<script>(function(){try{var t=localStorage.getItem('nehang-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+<link rel="stylesheet" href="../assets/css/case-study.css"/>
+</head>
+<body>
+<div id="progress-bar"></div>
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cur"></div>
+<div id="cur2"></div>
+<a class="skip-link" href="#cs-main">Skip to content</a>
+
+<nav id="nav">
+  <a href="../index.html" class="logo" aria-label="Nehang Patel">
+    <div class="logo-mark"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="8"  x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="8"  x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="17" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="6"  x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="17" x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="17" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="28" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <circle cx="7" cy="8"  r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="17" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="26" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="17" cy="6"  r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="17" cy="17" r="2.6" fill="var(--gold)" opacity="1"/>
+        <circle cx="17" cy="28" r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="27" cy="12" r="2.2" fill="var(--teal)" opacity=".9"/>
+        <circle cx="27" cy="22" r="2.2" fill="var(--teal)" opacity=".9"/>
+      </svg></div>
+    <div class="logo-wordmark">
+      <span class="logo-name">Nehang Patel</span>
+      <span class="logo-sub">Software Engineer</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#exp">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="resume-btn" id="resumeBtn">Resume</button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="../index.html#about" class="dl">About</a>
+  <a href="../index.html#projects" class="dl">Projects</a>
+  <a href="../index.html#exp" class="dl">Experience</a>
+  <a href="../index.html#education" class="dl">Education</a>
+  <a href="../index.html#contact" class="dl">Contact</a>
+  <button class="drawer-resume" id="drawerResumeBtn">Resume</button>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://x.com/itsnehangp_x" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="X"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="mailto:nehangal@usc.edu?subject=Hello%20Nehang&amp;body=Hi%20Nehang%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect.%0A%0A" class="drawer-soc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+  </div>
+</div>
+<main id="cs-main" class="cs-page">
+
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      
+      <a href="../index.html#projects" class="cs-back r">All projects</a>
+      <p class="cs-eyebrow r"><span class="cs-eyebrow-dot"></span>Web · LMS · Live on Vercel</p>
+      <h1 class="cs-title r">Course<em>Arc</em></h1>
+      <p class="cs-lead r">A full-stack reimagining of Canvas LMS — dashboard, course pages, discussion boards, and sidebar navigation rebuilt with React, Vite, and ShadCN/UI. Designed for extensibility, accessibility, and a modern visual language with seamless dark/light mode.</p>
+      <p class="cs-lead-sub r">CourseArc started as a personal challenge: could I reproduce the information density of a production LMS without the visual clutter? The answer became a modular React app deployed on Vercel — part portfolio piece, part reference architecture for educational UI.</p>
+      <div class="cs-meta-grid r"><div class="cs-meta-cell"><p class="cs-meta-label">Role</p><p class="cs-meta-val">Sole designer & developer</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Timeline</p><p class="cs-meta-val">2025 — Present</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Context</p><p class="cs-meta-val">Personal project · LMS UX study</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Live</p><p class="cs-meta-val">canvas-clone-theta.vercel.app</p></div></div>
+      <div class="cs-ctas r"><a href="https://canvas-clone-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-g">Live demo</a><a href="https://github.com/NehangPatel23/canvas-clone" target="_blank" rel="noopener noreferrer" class="btn btn-g">GitHub</a><a href="../index.html#contact" class="btn btn-g">Contact</a></div>
+    </div>
+  </header>
+
+  <div class="cs-layout">
+    <aside class="cs-toc"><p class="cs-toc-label">On this page</p><a href="#overview">Overview</a><a href="#visual-proof">Visual proof</a><a href="#context">Context</a><a href="#challenge">Challenge</a><a href="#goals">Goals</a><a href="#architecture">Architecture</a><a href="#built">What I built</a><a href="#deep-dives">Deep dives</a><a href="#timeline">Timeline</a><a href="#results">Results</a><a href="#problems">Hard problems</a><a href="#lessons">Lessons</a><a href="#reviewer">Reviewer guide</a><a href="#stack">Stack</a><a href="#next">What's next</a></aside>
+    <div class="cs-content">
+      <div class="cs-metrics"><div class="cs-metric r"><div class="cs-metric-n">Live</div><div class="cs-metric-l">Production deploy</div></div><div class="cs-metric r"><div class="cs-metric-n">4+</div><div class="cs-metric-l">Core LMS surfaces</div></div><div class="cs-metric r"><div class="cs-metric-n">2</div><div class="cs-metric-l">Theme modes</div></div><div class="cs-metric r"><div class="cs-metric-n">Modular</div><div class="cs-metric-l">Feature folders</div></div></div>
+
+      <section class="cs-section r" id="overview">
+      <div class="cs-section-head"><p class="cs-section-label">Overview</p><h2 class="cs-section-title">At a glance</h2></div>
+      <div class="cs-section-body"><div class="cs-glance"><div class="cs-glance-item r"><p class="cs-glance-label">Product type</p><p class="cs-glance-val">Web · LMS clone · Educational UX</p></div><div class="cs-glance-item r"><p class="cs-glance-label">My contribution</p><p class="cs-glance-val">Information architecture, UI design, front-end implementation, deployment, component system</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Reference</p><p class="cs-glance-val">Canvas LMS patterns — dashboard, courses, discussions, sidebar</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Stack</p><p class="cs-glance-val">React, Vite, TypeScript, TailwindCSS, ShadCN/UI</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="visual-proof">
+      <div class="cs-section-head"><p class="cs-section-label">Visual proof</p><h2 class="cs-section-title">Interface & artifacts</h2></div>
+      <div class="cs-section-body"><p>Screenshots and recordings document key flows. Replace placeholders in <code>assets/projects/case-studies/coursearc/</code> when assets are ready.</p><div class="cs-gallery cs-gallery-2"><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · coursearc/dashboard.png</div>
+      <figcaption class="cs-gallery-cap">Dashboard — course cards, upcoming assignments, and sidebar navigation mirroring Canvas IA.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · coursearc/detail.png</div>
+      <figcaption class="cs-gallery-cap">Course home — modules list, progress indicators, and content hierarchy.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · coursearc/flow.png</div>
+      <figcaption class="cs-gallery-cap">Discussion board — threaded replies, rich text placeholders, participation UI.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · coursearc/mobile.png</div>
+      <figcaption class="cs-gallery-cap">Dark mode — full theme token swap preserving contrast and readability.</figcaption>
+    </figure></div></div>
+    </section>
+      <section class="cs-section r" id="context">
+      <div class="cs-section-head"><p class="cs-section-label">Context</p><h2 class="cs-section-title">Background & origin</h2></div>
+      <div class="cs-section-body"><p>Learning management systems are daily drivers for millions of students — yet their UX often feels like admin software from 2010. I use Canvas weekly at USC and wanted to understand why certain patterns persist (sidebar course list, module sequencing, discussion threading) and which could feel modern without breaking learnability.</p><p>CourseArc is not a backend-complete LMS. It's a high-fidelity front-end study with realistic data models, routing, and component boundaries that would support real API integration later.</p><blockquote class="cs-quote r">Clone the IA, reinvent the feel. Students shouldn't need a manual to find this week's assignment.</blockquote></div>
+    </section>
+      <section class="cs-section r" id="challenge">
+      <div class="cs-section-head"><p class="cs-section-label">Problem</p><h2 class="cs-section-title">The challenge</h2></div>
+      <div class="cs-section-body"><p>Canvas packs enormous information density: dozens of courses, nested modules, assignments with due dates, discussions with unread counts, and global navigation that must stay oriented across contexts.</p><p>Rebuilding it meant respecting familiar mental models while upgrading typography, spacing, dark mode, and micro-interactions. ShadCN/UI accelerated component quality but required careful theming to avoid 'generic SaaS' aesthetics.</p></div>
+    </section>
+      <section class="cs-section r" id="goals">
+      <div class="cs-section-head"><p class="cs-section-label">Strategy</p><h2 class="cs-section-title">Goals & constraints</h2></div>
+      <div class="cs-section-body"><ul><li>Replicate core Canvas surfaces: dashboard, course home, discussions, global sidebar</li><li>Ship dark/light mode with semantic tokens — not hard-coded colors per component</li><li>Structure codebase for feature growth (assignments, grades, inbox as future modules)</li><li>Deploy a fast, public demo on Vercel for portfolio review</li><li>Document component patterns for reuse in future educational products</li></ul></div>
+    </section>
+      <section class="cs-section r" id="architecture">
+      <div class="cs-section-head"><p class="cs-section-label">System</p><h2 class="cs-section-title">Architecture overview</h2></div>
+      <div class="cs-section-body"><p>Vite + React Router drive client-side navigation. Each LMS surface lives in a feature folder (`/features/dashboard`, `/features/course`, etc.) with colocated components and hooks.</p><p>ShadCN/UI provides accessible primitives (Dialog, Dropdown, Tabs) restyled via Tailwind tokens. Theme toggling flips `data-theme` on `<html>` and relies on CSS variables — components never branch on theme manually.</p><div class="cs-arch"><div class="cs-flow"><span>React routes</span><span class="cs-arrow">→</span><span>Feature modules</span><span class="cs-arrow">→</span><span>ShadCN components</span><span class="cs-arrow">→</span><span>Theme provider</span><span class="cs-arrow">→</span><span>Mock data layer</span></div><div class="cs-arch-list"><div class="cs-arch-item"><strong>Dashboard</strong>Course grid, upcoming work, announcements</div><div class="cs-arch-item"><strong>Course shell</strong>Local nav, breadcrumbs, module timeline</div><div class="cs-arch-item"><strong>Discussions</strong>Thread list, reply composer, unread state</div><div class="cs-arch-item"><strong>Global sidebar</strong>Course list, term grouping, collapse behavior</div><div class="cs-arch-item"><strong>Theme system</strong>CSS variables + Tailwind dark variant</div><div class="cs-arch-item"><strong>Data mocks</strong>Typed fixtures simulating LMS API responses</div></div></div></div>
+    </section>
+      <section class="cs-section r" id="built">
+      <div class="cs-section-head"><p class="cs-section-label">Delivery</p><h2 class="cs-section-title">What I built</h2></div>
+      <div class="cs-section-body"><p>Sole ownership from wireframes to deployment.</p><div class="cs-features"><div class="cs-feature r"><p class="cs-feature-title">Information architecture</p><p class="cs-feature-desc">Mapped Canvas navigation patterns to React routes with persistent sidebar context.</p></div><div class="cs-feature r"><p class="cs-feature-title">Dashboard & course views</p><p class="cs-feature-desc">Course cards, module lists, assignment due dates with responsive grid layouts.</p></div><div class="cs-feature r"><p class="cs-feature-title">Discussion UI</p><p class="cs-feature-desc">Threaded layout, participant avatars, reply areas matching LMS expectations.</p></div><div class="cs-feature r"><p class="cs-feature-title">Dark/light mode</p><p class="cs-feature-desc">Full token swap with prefers-color-scheme respect and manual toggle persistence.</p></div><div class="cs-feature r"><p class="cs-feature-title">ShadCN integration</p><p class="cs-feature-desc">Customized Button, Card, Sheet, and NavigationMenu for educational density.</p></div><div class="cs-feature r"><p class="cs-feature-title">Vercel deployment</p><p class="cs-feature-desc">Optimized build pipeline, clean URLs, OG tags for shareable demo links.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="deep-dives">
+      <div class="cs-section-head"><p class="cs-section-label">Technical</p><h2 class="cs-section-title">Deep dives</h2></div>
+      <div class="cs-section-body"><h4>Theme tokens vs one-off styles</h4><p>Defined `--surface`, `--muted`, `--accent` once in Tailwind config. Adding dark mode meant editing tokens, not 40 components.</p><h4>Sidebar persistence</h4><p>Course context survives route changes via layout routes — mirrors how students expect the left rail to stay put.</p><h4>Mock data typing</h4><p>TypeScript interfaces for Course, Module, Assignment, Discussion — ready to swap mocks for fetch calls without rewriting UI.</p></div>
+    </section>
+      <section class="cs-section r" id="timeline">
+      <div class="cs-section-head"><p class="cs-section-label">Process</p><h2 class="cs-section-title">Timeline & phases</h2></div>
+      <div class="cs-section-body"><div class="cs-timeline"><div class="cs-tl-item"><p class="cs-tl-phase">Phase 1</p><p class="cs-tl-title">IA audit, Figma sketches, Vite scaffold</p><p class="cs-tl-desc">Route map + component inventory</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Phase 2</p><p class="cs-tl-title">Dashboard + sidebar</p><p class="cs-tl-desc">First deployable vertical slice</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Phase 3</p><p class="cs-tl-title">Course + discussion modules</p><p class="cs-tl-desc">Feature parity with core Canvas flows</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Phase 4</p><p class="cs-tl-title">Dark mode, polish, Vercel</p><p class="cs-tl-desc">Public demo linked from portfolio</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="results">
+      <div class="cs-section-head"><p class="cs-section-label">Impact</p><h2 class="cs-section-title">Results & outcomes</h2></div>
+      <div class="cs-section-body"><p>CourseArc is live, fast, and readable — a portfolio-grade demonstration of educational UI craft.</p><ul><li>Public Vercel deployment reviewers can click through immediately</li><li>Modular architecture supports adding grades, inbox, and calendar without rewrites</li><li>Dark/light modes with accessible contrast throughout</li><li>ShadCN + Tailwind stack documented for future contributors</li></ul><div class="cs-tags"><span class="cs-tag">React</span><span class="cs-tag">Vite</span><span class="cs-tag">TypeScript</span><span class="cs-tag">TailwindCSS</span><span class="cs-tag">ShadCN</span><span class="cs-tag">LMS</span><span class="cs-tag">Vercel</span></div></div>
+    </section>
+      <section class="cs-section r" id="problems">
+      <div class="cs-section-head"><p class="cs-section-label">Engineering</p><h2 class="cs-section-title">Hard problems</h2></div>
+      <div class="cs-section-body"><div class="cs-problems"><div class="cs-problem r"><h4>Information density vs whitespace</h4><p>LMS screens risk feeling empty or cluttered with one wrong spacing choice.</p><p class="cs-solution"><strong>Solution →</strong> Established 4px grid + typographic scale; tested with real assignment counts from a semester.</p></div><div class="cs-problem r"><h4>ShadCN default aesthetics</h4><p>Out-of-box components look like admin dashboards.</p><p class="cs-solution"><strong>Solution →</strong> Custom border radii, serif headings, gold accent tokens aligned with portfolio brand.</p></div><div class="cs-problem r"><h4>Scope without backend</h4><p>Easy to overbuild API layers for a UI study.</p><p class="cs-solution"><strong>Solution →</strong> Typed mocks + clear 'future integration' boundaries kept scope shippable.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="lessons">
+      <div class="cs-section-head"><p class="cs-section-label">Reflection</p><h2 class="cs-section-title">Lessons learned</h2></div>
+      <div class="cs-section-body"><div class="cs-lessons"><div class="cs-lesson r"><span class="cs-lesson-n">01</span><span>Students navigate by muscle memory — change visuals, keep IA.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">02</span><span>Design tokens are the cheapest dark mode investment.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">03</span><span>Deploy early; LMS UIs need real browser scroll testing, not just Storybook.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="reviewer">
+      <div class="cs-section-head"><p class="cs-section-label">Guide</p><h2 class="cs-section-title">Reviewer walkthrough</h2></div>
+      <div class="cs-section-body"><div class="cs-steps"><div class="cs-step r"><span class="cs-step-n">01</span><p>Open the <strong>live demo</strong> and toggle dark/light mode — notice token-based theming.</p></div><div class="cs-step r"><span class="cs-step-n">02</span><p>Navigate dashboard → course → discussion and observe persistent sidebar.</p></div><div class="cs-step r"><span class="cs-step-n">03</span><p>Compare assignment density to commercial Canvas — spacing and type do heavy lifting.</p></div><div class="cs-step r"><span class="cs-step-n">04</span><p>Browse the GitHub repo for feature-folder structure and ShadCN customization.</p></div><div class="cs-step r"><span class="cs-step-n">05</span><p>Check responsive behavior at tablet width — grids collapse intentionally.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="stack">
+      <div class="cs-section-head"><p class="cs-section-label">Stack</p><h2 class="cs-section-title">Technology choices</h2></div>
+      <div class="cs-section-body"><div class="cs-rationale"><div class="cs-rat-item r"><span class="cs-rat-tech">React</span><span class="cs-rat-why">Component model fits nested LMS layouts and shared shell state.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Vite</span><span class="cs-rat-why">Fast dev server and optimized production bundles for Vercel.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">TypeScript</span><span class="cs-rat-why">Typed mock models ready for future API integration.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">TailwindCSS</span><span class="cs-rat-why">Utility-first styling with design tokens for theming.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">ShadCN/UI</span><span class="cs-rat-why">Accessible primitives customized for educational UI density.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="next">
+      <div class="cs-section-head"><p class="cs-section-label">Roadmap</p><h2 class="cs-section-title">What's next</h2></div>
+      <div class="cs-section-body"><p>Roadmap includes read-only API integration with a real LMS sandbox, assignment submission flows, gradebook views, and keyboard navigation audit for WCAG AA compliance.</p></div>
+    </section>
+
+      <div class="cs-footer-nav r">
+        <a href="meditechsafe-ui.html">← MediTechSafe Internal UI</a>
+        <a href="../index.html#projects" class="cs-fn-home">All projects</a>
+        <a href="pulseboard.html">PulseBoard →</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer><p>© 2026 Nehang Patel</p><div class="footer-right"><a href="../index.html" style="color:var(--muted);font-size:.66rem;text-decoration:none">← Portfolio home</a></div></footer>
+<div id="resumeOverlay" role="dialog" aria-modal="true" aria-label="Nehang Patel — Resume">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <p class="resume-modal-title">Nehang Patel <span>— Resume</span></p>
+      <div class="resume-modal-actions">
+        <a href="../assets/resume/Nehang_Patel_Resume.pdf" download="Nehang_Patel_Resume.pdf" rel="noopener noreferrer" class="resume-dl-btn" id="resumeDlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="resume-close" id="resumeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="resume-body">
+      <div class="rv-header">
+        <h2 class="rv-name">Nehang <span>Patel</span></h2>
+        <div class="rv-meta">
+          <span>Los Angeles, CA</span>
+          <a href="mailto:nehangal@usc.edu">nehangal@usc.edu</a>
+          <a href="https://linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nehangpatel</a>
+          <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer">github.com/NehangPatel23</a>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Education</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Southern California</span><span class="rv-entry-date">Aug 2025 — May 2027</span></div>
+          <p class="rv-entry-sub">MS Computer Science · Viterbi School of Engineering</p>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Cincinnati</span><span class="rv-entry-date">Aug 2020 — May 2025</span></div>
+          <p class="rv-entry-sub">BS Computer Science · Minor: Cyber Operations &amp; Software Engineering</p>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Experience</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">Jan 2024 — Apr 2024</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · West Chester, OH</p>
+          <ul class="rv-list"><li>Refactored web-scraping codebase; built Flutter UI with Golang API integration</li></ul>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Skills</p>
+        <div class="rv-skills">
+          <span class="rv-skill">Python</span><span class="rv-skill">Flutter</span><span class="rv-skill">GoLang</span><span class="rv-skill">TypeScript</span><span class="rv-skill">React</span><span class="rv-skill">Next.js</span><span class="rv-skill">MySQL</span><span class="rv-skill">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/case-study.js" defer></script>
+</body>
+</html>

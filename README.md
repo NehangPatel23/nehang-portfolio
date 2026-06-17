@@ -4,7 +4,7 @@ I'm a MSCS student at USC's Viterbi School of Engineering, having previously com
 
 My work spans data pipelines, mobile apps, web scraping systems, and interactive UI — always anchored in clean architecture, user empathy, and measurable impact.
 
-Beyond engineering, I've taught design thinking to 1,500+ students and currently lead marketing for GRIDS @ USC.
+Beyond engineering, I've taught design thinking to 1,500+ students and will serve as President of GRIDS @ USC beginning Fall 2026.
 
 ---
 

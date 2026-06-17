@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nehang-portfolio.vercel.app/sitemap.xml

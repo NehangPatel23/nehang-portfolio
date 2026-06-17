@@ -1,0 +1,270 @@
+/* ═══════════════════════════════════════════════════════
+   CASE STUDY PAGES — extended layout & aesthetics
+   ═══════════════════════════════════════════════════════ */
+
+.cs-page{padding-top:0;padding-bottom:100px;position:relative}
+.cs-page::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:520px;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 0%,rgba(167,139,245,.12) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 20%,rgba(94,234,212,.06) 0%,transparent 60%);
+}
+
+/* Hero band */
+.cs-hero{
+  position:relative;z-index:1;
+  padding:140px var(--pad) 64px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:56px;
+}
+.cs-hero-inner{max-width:1100px;margin:0 auto}
+.cs-back{
+  display:flex;align-items:center;gap:8px;width:fit-content;
+  font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;margin-bottom:20px;
+  transition:color .3s,gap .35s var(--ease);
+}
+.cs-back:hover{color:var(--gold);gap:12px}
+.cs-back::before{content:'←'}
+
+.cs-eyebrow{
+  display:flex;align-items:center;gap:8px;width:fit-content;
+  font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  padding:5px 12px;border:1px solid var(--border);background:var(--gold2);
+}
+
+.cs-proprietary{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  margin-bottom:24px;padding:12px 16px;
+  border:1px solid rgba(94,234,212,.35);background:rgba(94,234,212,.06);
+}
+.cs-proprietary-pill{
+  display:inline-flex;align-items:center;
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);border:1px solid var(--teal);
+  padding:4px 10px;background:rgba(94,234,212,.1);white-space:nowrap;
+}
+.cs-proprietary-note{font-size:.76rem;color:var(--muted);line-height:1.5}
+.cs-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:blink 1.6s ease-in-out infinite}
+
+.cs-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,6vw,4.4rem);font-weight:300;line-height:1.05;
+  margin-bottom:20px;max-width:800px;
+}
+.cs-title em{font-style:italic;color:var(--gold)}
+
+.cs-lead{font-size:1rem;color:var(--muted);line-height:1.85;max-width:720px;margin-bottom:12px}
+.cs-lead-sub{font-size:.88rem;color:var(--muted);line-height:1.8;max-width:720px;opacity:.85;margin-bottom:24px}
+
+.cs-meta-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  margin:28px 0 32px;max-width:900px;
+}
+@media(max-width:768px){.cs-meta-grid{grid-template-columns:repeat(2,1fr)}}
+.cs-meta-cell{background:var(--bg2);border:1px solid var(--border);padding:16px 18px}
+.cs-meta-label{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.cs-meta-val{font-size:.82rem;color:var(--text);line-height:1.45}
+
+.cs-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:0}
+.cs-ctas .btn{margin:0}
+
+/* Layout: sidebar TOC + content */
+.cs-layout{
+  position:relative;z-index:1;
+  max-width:1100px;margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;
+}
+@media(max-width:960px){.cs-layout{grid-template-columns:1fr;gap:0}}
+
+.cs-toc{
+  position:sticky;top:100px;
+  padding:20px 0;border-top:1px solid var(--border);
+}
+@media(max-width:960px){.cs-toc{display:none}}
+.cs-toc-label{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.cs-toc a{
+  display:block;font-size:.68rem;letter-spacing:.06em;
+  color:var(--muted);text-decoration:none;padding:7px 0;
+  border-left:2px solid transparent;padding-left:12px;margin-left:-12px;
+  transition:color .25s,border-color .25s;
+}
+.cs-toc a:hover,.cs-toc a.active{color:var(--text);border-left-color:var(--gold)}
+
+.cs-content{min-width:0}
+
+/* Impact metrics strip */
+.cs-metrics{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  margin-bottom:48px;
+}
+@media(max-width:640px){.cs-metrics{grid-template-columns:repeat(2,1fr)}}
+.cs-metric{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:24px 20px;text-align:center;position:relative;overflow:hidden;
+}
+.cs-metric::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--teal));opacity:.5;
+}
+.cs-metric-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:8px}
+.cs-metric-l{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.4}
+
+/* Section blocks */
+.cs-section{margin-bottom:56px;scroll-margin-top:100px}
+.cs-section-head{margin-bottom:22px}
+.cs-section-label{
+  font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:10px;
+}
+.cs-section-label::after{content:'';flex:1;height:1px;background:var(--border);max-width:80px}
+.cs-section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,3vw,2rem);font-weight:400;line-height:1.2;
+}
+.cs-section-body{font-size:.9rem;color:var(--muted);line-height:1.85}
+.cs-section-body p{margin-bottom:16px}
+.cs-section-body ul,.cs-section-body ol{margin:12px 0 16px 20px}
+.cs-section-body li{margin-bottom:10px}
+.cs-section-body strong{color:var(--text);font-weight:500}
+.cs-section-body h4{
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;
+  color:var(--text);margin:24px 0 10px;font-weight:400;
+}
+
+/* Pull quote */
+.cs-quote{
+  margin:28px 0;padding:24px 28px;
+  border-left:3px solid var(--gold);background:var(--gold2);
+  font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;
+  color:var(--text);line-height:1.55;
+}
+
+/* At a glance — 2x2 grid */
+.cs-glance{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:16px}
+@media(max-width:560px){.cs-glance{grid-template-columns:1fr}}
+.cs-glance-item{background:var(--bg2);border:1px solid var(--border);padding:22px 24px}
+.cs-glance-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.cs-glance-val{font-size:.86rem;color:var(--text);line-height:1.6}
+
+/* Feature grid */
+.cs-features{display:grid;gap:2px;margin-top:20px}
+@media(min-width:640px){.cs-features{grid-template-columns:1fr 1fr}}
+.cs-feature{background:var(--bg2);border:1px solid var(--border);padding:22px 24px}
+.cs-feature-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text);margin-bottom:8px}
+.cs-feature-desc{font-size:.82rem;color:var(--muted);line-height:1.65}
+
+/* Architecture diagram */
+.cs-arch{
+  margin-top:20px;padding:28px;background:var(--bg2);border:1px solid var(--border);
+}
+.cs-flow{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;
+  font-size:.72rem;margin-bottom:20px;
+}
+.cs-flow span{
+  padding:10px 16px;border:1px solid var(--border);background:var(--bg);
+  color:var(--text);font-weight:400;
+}
+.cs-flow .cs-arrow{color:var(--gold);padding:0 4px;border:none;background:none}
+.cs-arch-list{display:grid;gap:2px}
+@media(min-width:640px){.cs-arch-list{grid-template-columns:1fr 1fr}}
+.cs-arch-item{padding:14px 18px;background:var(--bg);border:1px solid var(--border);font-size:.8rem}
+.cs-arch-item strong{color:var(--gold);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:4px}
+
+/* Timeline */
+.cs-timeline{margin-top:20px;border-left:1px solid var(--border);margin-left:8px;padding-left:28px}
+.cs-tl-item{position:relative;padding-bottom:28px}
+.cs-tl-item:last-child{padding-bottom:0}
+.cs-tl-item::before{
+  content:'';position:absolute;left:-33px;top:6px;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 0 4px var(--bg2);
+}
+.cs-tl-phase{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.cs-tl-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text);margin-bottom:6px}
+.cs-tl-desc{font-size:.82rem;color:var(--muted);line-height:1.65}
+
+/* Visual proof */
+.cs-gallery{display:grid;gap:20px;margin-top:20px}
+@media(min-width:768px){.cs-gallery.cs-gallery-2{grid-template-columns:1fr 1fr}}
+.cs-gallery-item{border:1px solid var(--border);background:var(--bg2);overflow:hidden;transition:border-color .35s}
+.cs-gallery-item:hover{border-color:var(--gold)}
+.cs-gallery-item img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;object-position:top}
+.cs-gallery-cap{padding:16px 20px;font-size:.8rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--border)}
+.cs-placeholder{
+  aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(145deg,var(--bg2) 0%,var(--bg3) 50%,var(--bg2) 100%);
+  color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-align:center;padding:32px;
+}
+.cs-placeholder-icon{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--faint);line-height:1}
+
+/* Hard problems — accent cards */
+.cs-problems{display:grid;gap:2px;margin-top:20px}
+@media(min-width:768px){.cs-problems{grid-template-columns:1fr 1fr}}
+.cs-problem{
+  background:var(--bg2);border:1px solid var(--border);padding:24px 26px;
+  position:relative;overflow:hidden;
+}
+.cs-problem::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:var(--teal);opacity:.6;
+}
+.cs-problem h4{font-family:'Cormorant Garamond',serif;font-size:1.12rem;color:var(--text);margin-bottom:10px;line-height:1.3}
+.cs-problem p{font-size:.84rem;color:var(--muted);line-height:1.7;margin-bottom:8px}
+.cs-problem .cs-solution{font-size:.78rem;color:var(--teal);margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+
+/* Lessons */
+.cs-lessons{display:grid;gap:2px;margin-top:16px}
+.cs-lesson{
+  display:flex;gap:16px;padding:18px 20px;background:var(--bg2);border:1px solid var(--border);
+  font-size:.84rem;color:var(--muted);line-height:1.65;
+}
+.cs-lesson-n{flex-shrink:0;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--faint);line-height:1}
+
+/* Reviewer steps */
+.cs-steps{margin-top:16px}
+.cs-step{
+  display:grid;grid-template-columns:44px 1fr;gap:20px;
+  padding:22px 0;border-top:1px solid var(--border);
+  font-size:.86rem;color:var(--muted);line-height:1.7;
+}
+.cs-step:first-child{border-top:none;padding-top:0}
+.cs-step-n{
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--border);background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;color:var(--gold);font-weight:500;
+}
+
+/* Stack table */
+.cs-rationale{display:grid;gap:2px;margin-top:16px}
+.cs-rat-item{
+  display:grid;grid-template-columns:130px 1fr;gap:20px;
+  padding:18px 22px;background:var(--bg2);border:1px solid var(--border);
+  font-size:.84rem;line-height:1.65;align-items:start;
+}
+@media(max-width:560px){.cs-rat-item{grid-template-columns:1fr;gap:6px}}
+.cs-rat-tech{color:var(--gold);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.cs-rat-why{color:var(--muted)}
+
+/* Tags row */
+.cs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.cs-tag{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:4px 10px;background:var(--bg2)}
+
+/* Footer nav */
+.cs-footer-nav{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  margin-top:72px;padding-top:36px;border-top:1px solid var(--border);
+}
+.cs-footer-nav a{
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .3s,gap .3s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.cs-footer-nav a:hover{color:var(--gold)}
+.cs-footer-nav .cs-fn-home{color:var(--gold)}
+
+.cs-section-body code{font-size:.78rem;color:var(--gold);background:var(--bg2);padding:2px 6px;border:1px solid var(--border)}
+.cs-page nav.stuck + .cs-hero{padding-top:120px}

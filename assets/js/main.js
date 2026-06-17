@@ -36,6 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 /* CURSOR */
 if(window.matchMedia('(pointer:fine)').matches){
   const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+  if(cur&&cur2){
   let mx=0,my=0,fx=0,fy=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
   (function loop(){fx+=(mx-fx)*.11;fy+=(my-fy)*.11;cur2.style.left=fx+'px';cur2.style.top=fy+'px';requestAnimationFrame(loop)})();
@@ -43,6 +44,7 @@ if(window.matchMedia('(pointer:fine)').matches){
     el.addEventListener('mouseenter',()=>{cur.classList.add('big');cur2.classList.add('big')});
     el.addEventListener('mouseleave',()=>{cur.classList.remove('big');cur2.classList.remove('big')});
   });
+  }
 }
 
 /* STICKY NAV */
@@ -102,7 +104,7 @@ if(resumeClose)resumeClose.addEventListener('click',closeResume);
 resumeOverlay.addEventListener('click',e=>{if(e.target===resumeOverlay)closeResume();});
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'&&resumeOverlay.classList.contains('open')){closeResume();return;}
-  /* Focus trap inside modal */
+  /* Focus trap inside resume modal */
   if(!resumeOverlay.classList.contains('open'))return;
   if(e.key!=='Tab')return;
   const focusable=resumeOverlay.querySelectorAll('a,button,[tabindex]:not([tabindex="-1"])');
@@ -119,6 +121,15 @@ function openResume(){
     setTimeout(()=>{if(resumeClose)resumeClose.focus();},420);
   });
 }
+
+/* Contact form success message */
+(function(){
+  const note=document.getElementById('formNote');
+  if(note&&new URLSearchParams(location.search).get('sent')==='1'){
+    note.textContent='Message sent — thanks for reaching out! I\'ll reply soon.';
+    note.classList.add('success');
+  }
+})();
 
 /* Page visibility: pause terminal when tab is hidden, resume on return */
 document.addEventListener('visibilitychange',()=>{
@@ -143,19 +154,41 @@ if(btt)btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'
 
 /* ACTIVE NAV HIGHLIGHTING */
 const navSections=['about','projects','exp','education','contact'];
-const navLinks=document.querySelectorAll('.nav-links a');
 const secEls=navSections.map(id=>document.getElementById(id)).filter(Boolean);
-const navObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const id=e.target.id;
-      navLinks.forEach(a=>{
-        a.classList.toggle('active',a.getAttribute('href')==='#'+id);
-      });
-    }
-  });
-},{threshold:.35,rootMargin:'-60px 0px -40% 0px'});
-secEls.forEach(el=>navObs.observe(el));
+const navAnchors=document.querySelectorAll('.nav-links a, .nav-drawer a.dl');
+const navEl=document.getElementById('nav');
+
+function setActiveNav(id){
+  navAnchors.forEach(a=>a.classList.toggle('active',id&&a.getAttribute('href')==='#'+id));
+}
+
+function updateActiveNav(){
+  const offset=(navEl?navEl.getBoundingClientRect().height:80)+32;
+  const maxScroll=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+
+  /* At page bottom, contact is the active section */
+  if(window.scrollY>=maxScroll-80){
+    setActiveNav('contact');
+    return;
+  }
+
+  const y=window.scrollY+offset;
+  let current=null;
+  for(const el of secEls){
+    const top=el.getBoundingClientRect().top+window.scrollY;
+    if(top<=y)current=el.id;
+  }
+  setActiveNav(current);
+}
+
+let navTick=false;
+window.addEventListener('scroll',()=>{
+  if(navTick)return;
+  navTick=true;
+  requestAnimationFrame(()=>{updateActiveNav();navTick=false;});
+},{passive:true});
+window.addEventListener('resize',updateActiveNav,{passive:true});
+updateActiveNav();
 
 /* COPY EMAIL */
 const copyEmailEl=document.getElementById('copyEmail');
@@ -186,6 +219,24 @@ if(copyEmailEl){
 (function(){
   const tabs=document.querySelectorAll('.pftab');
   const cards=document.querySelectorAll('#pgrid .pcard');
+
+  function renumberVisibleCards(){
+    const visible=[...document.querySelectorAll('#pgrid .pcard')].filter(c=>!c.hidden);
+    visible.forEach((card,i)=>{
+      const el=card.querySelector('.pnum');
+      if(el)el.textContent=String(i+1).padStart(2,'0');
+    });
+  }
+
+  function updateSoloCard(){
+    cards.forEach(c=>c.classList.remove('pcard-solo'));
+    const standard=[...document.querySelectorAll('#pgrid .pcard')]
+      .filter(c=>!c.hidden&&!c.classList.contains('wide'));
+    if(standard.length%2===1){
+      standard[standard.length-1].classList.add('pcard-solo');
+    }
+  }
+
   tabs.forEach(btn=>{
     btn.addEventListener('click',()=>{
       tabs.forEach(b=>b.classList.remove('active'));
@@ -195,8 +246,13 @@ if(copyEmailEl){
         const cats=(c.dataset.category||'').split(' ');
         c.hidden=!cats.includes(f);
       });
+      renumberVisibleCards();
+      updateSoloCard();
     });
   });
+
+  renumberVisibleCards();
+  updateSoloCard();
 })();
 
 /* STAT COUNTER ANIMATION

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="color-scheme" content="dark light"/>
+<meta name="theme-color" content="#07070A" media="(prefers-color-scheme: dark)"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MoodBoard AI — Case Study | Nehang Patel</title>
+<meta name="description" content="AI-assisted moodboarding workspace — prompts to structured boards with palette, typography, references, collaboration, and JSON/PNG/PDF export."/>
+<meta property="og:title" content="MoodBoard AI — Case Study | Nehang Patel"/>
+<meta property="og:description" content="AI-assisted moodboarding workspace — prompts to structured boards with palette, typography, references, collaboration, and JSON/PNG/PDF export."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://nehang-portfolio.vercel.app/projects/moodboard-ai"/>
+<meta property="og:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="MoodBoard AI — Case Study"/>
+<meta name="twitter:description" content="AI-assisted moodboarding workspace — prompts to structured boards with palette, typography, references, collaboration, and JSON/PNG/PDF export."/>
+<meta name="twitter:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<link rel="canonical" href="https://nehang-portfolio.vercel.app/projects/moodboard-ai"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%2307070A'/%3E%3Ccircle cx='17' cy='17' r='2.6' fill='%23A78BF5'/%3E%3C/svg%3E"/>
+<script>(function(){try{var t=localStorage.getItem('nehang-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+<link rel="stylesheet" href="../assets/css/case-study.css"/>
+</head>
+<body>
+<div id="progress-bar"></div>
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cur"></div>
+<div id="cur2"></div>
+<a class="skip-link" href="#cs-main">Skip to content</a>
+
+<nav id="nav">
+  <a href="../index.html" class="logo" aria-label="Nehang Patel">
+    <div class="logo-mark"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="8"  x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="8"  x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="17" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="6"  x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="17" x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="17" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="28" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <circle cx="7" cy="8"  r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="17" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="26" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="17" cy="6"  r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="17" cy="17" r="2.6" fill="var(--gold)" opacity="1"/>
+        <circle cx="17" cy="28" r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="27" cy="12" r="2.2" fill="var(--teal)" opacity=".9"/>
+        <circle cx="27" cy="22" r="2.2" fill="var(--teal)" opacity=".9"/>
+      </svg></div>
+    <div class="logo-wordmark">
+      <span class="logo-name">Nehang Patel</span>
+      <span class="logo-sub">Software Engineer</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#exp">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="resume-btn" id="resumeBtn">Resume</button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="../index.html#about" class="dl">About</a>
+  <a href="../index.html#projects" class="dl">Projects</a>
+  <a href="../index.html#exp" class="dl">Experience</a>
+  <a href="../index.html#education" class="dl">Education</a>
+  <a href="../index.html#contact" class="dl">Contact</a>
+  <button class="drawer-resume" id="drawerResumeBtn">Resume</button>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://x.com/itsnehangp_x" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="X"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="mailto:nehangal@usc.edu?subject=Hello%20Nehang&amp;body=Hi%20Nehang%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect.%0A%0A" class="drawer-soc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+  </div>
+</div>
+<main id="cs-main" class="cs-page">
+
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      
+      <a href="../index.html#projects" class="cs-back r">All projects</a>
+      <p class="cs-eyebrow r"><span class="cs-eyebrow-dot"></span>Web · AI · Live MVP</p>
+      <h1 class="cs-title r">MoodBoard <em>AI</em></h1>
+      <p class="cs-lead r">An AI-assisted creative workspace that turns a rough brief into a structured moodboard — palette, typography, reference images, and brand notes — in minutes instead of hours.</p>
+      <p class="cs-lead-sub r">MoodBoard AI combines Gemini-powered generation with a real-time collaborative canvas, Supabase persistence, and export paths designers actually use (JSON, PNG, PDF). The live MVP on Vercel is actively evolving.</p>
+      <div class="cs-meta-grid r"><div class="cs-meta-cell"><p class="cs-meta-label">Role</p><p class="cs-meta-val">Sole designer & developer</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Timeline</p><p class="cs-meta-val">2025 — Present</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Context</p><p class="cs-meta-val">Personal · Creative AI</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Live</p><p class="cs-meta-val">moodboard-ai-omega.vercel.app</p></div></div>
+      <div class="cs-ctas r"><a href="https://moodboard-ai-omega.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-g">Live demo</a><a href="https://github.com/NehangPatel23/Moodboard-AI" target="_blank" rel="noopener noreferrer" class="btn btn-g">GitHub</a><a href="../index.html#contact" class="btn btn-g">Contact</a></div>
+    </div>
+  </header>
+
+  <div class="cs-layout">
+    <aside class="cs-toc"><p class="cs-toc-label">On this page</p><a href="#overview">Overview</a><a href="#visual-proof">Visual proof</a><a href="#context">Context</a><a href="#challenge">Challenge</a><a href="#goals">Goals</a><a href="#architecture">Architecture</a><a href="#built">What I built</a><a href="#deep-dives">Deep dives</a><a href="#timeline">Timeline</a><a href="#results">Results</a><a href="#problems">Hard problems</a><a href="#lessons">Lessons</a><a href="#reviewer">Reviewer guide</a><a href="#stack">Stack</a><a href="#next">What's next</a></aside>
+    <div class="cs-content">
+      <div class="cs-metrics"><div class="cs-metric r"><div class="cs-metric-n">Live</div><div class="cs-metric-l">MVP deployed</div></div><div class="cs-metric r"><div class="cs-metric-n">AI</div><div class="cs-metric-l">Gemini generation</div></div><div class="cs-metric r"><div class="cs-metric-n">Realtime</div><div class="cs-metric-l">Collaboration</div></div><div class="cs-metric r"><div class="cs-metric-n">3</div><div class="cs-metric-l">Export formats</div></div></div>
+
+      <section class="cs-section r" id="overview">
+      <div class="cs-section-head"><p class="cs-section-label">Overview</p><h2 class="cs-section-title">At a glance</h2></div>
+      <div class="cs-section-body"><div class="cs-glance"><div class="cs-glance-item r"><p class="cs-glance-label">Product type</p><p class="cs-glance-val">Web · AI · Creative tooling</p></div><div class="cs-glance-item r"><p class="cs-glance-label">My contribution</p><p class="cs-glance-val">Product design, AI prompt pipeline, canvas UX, Supabase schema, export flows, deployment</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Users</p><p class="cs-glance-val">Designers, students, and marketers building visual direction fast</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Stack</p><p class="cs-glance-val">Next.js, React, TypeScript, Supabase, TailwindCSS, Gemini</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="visual-proof">
+      <div class="cs-section-head"><p class="cs-section-label">Visual proof</p><h2 class="cs-section-title">Interface & artifacts</h2></div>
+      <div class="cs-section-body"><p>Screenshots and recordings document key flows. Replace placeholders in <code>assets/projects/case-studies/moodboard-ai/</code> when assets are ready.</p><div class="cs-gallery cs-gallery-2"><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · moodboard-ai/dashboard.png</div>
+      <figcaption class="cs-gallery-cap">Prompt → board — AI output with color palette swatches and type pairings.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · moodboard-ai/detail.png</div>
+      <figcaption class="cs-gallery-cap">Canvas editor — drag, arrange, and annotate reference tiles.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · moodboard-ai/flow.png</div>
+      <figcaption class="cs-gallery-cap">Collaboration — multiple cursors and live updates on shared boards.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · moodboard-ai/mobile.png</div>
+      <figcaption class="cs-gallery-cap">Export modal — JSON structure, PNG snapshot, PDF layout options.</figcaption>
+    </figure></div></div>
+    </section>
+      <section class="cs-section r" id="context">
+      <div class="cs-section-head"><p class="cs-section-label">Context</p><h2 class="cs-section-title">Background & origin</h2></div>
+      <div class="cs-section-body"><p>Moodboarding is where projects find their visual voice — but assembling references, colors, and type choices manually is slow. AI can accelerate the first 80%, but designers still need a canvas to curate, rearrange, and share.</p><p>MoodBoard AI bridges generation and editing: Gemini proposes structured content; the React canvas lets humans refine; Supabase stores and syncs; exports meet handoff requirements.</p><blockquote class="cs-quote r">AI should propose; designers should dispose. The canvas is where taste happens.</blockquote></div>
+    </section>
+      <section class="cs-section r" id="challenge">
+      <div class="cs-section-head"><p class="cs-section-label">Problem</p><h2 class="cs-section-title">The challenge</h2></div>
+      <div class="cs-section-body"><p>Generative AI outputs unstructured text and random images. Designers need structured boards — hex codes, font names, labeled sections, consistent layout — not a chat transcript.</p><p>Real-time collaboration adds conflict resolution, presence, and persistence. Export must preserve layout fidelity across PNG and PDF, not just dump JSON for engineers.</p></div>
+    </section>
+      <section class="cs-section r" id="goals">
+      <div class="cs-section-head"><p class="cs-section-label">Strategy</p><h2 class="cs-section-title">Goals & constraints</h2></div>
+      <div class="cs-section-body"><ul><li>Convert natural-language briefs into structured moodboards via Gemini</li><li>Provide a canvas for drag-and-drop curation after generation</li><li>Support real-time collaboration with Supabase realtime channels</li><li>Export to JSON (interchange), PNG (quick share), PDF (client handoff)</li><li>Deploy a stable MVP on Vercel for public testing</li></ul></div>
+    </section>
+      <section class="cs-section r" id="architecture">
+      <div class="cs-section-head"><p class="cs-section-label">System</p><h2 class="cs-section-title">Architecture overview</h2></div>
+      <div class="cs-section-body"><p>Next.js handles routing and API routes for Gemini calls — keys stay server-side. The canvas is a client component with normalized board state synced to Supabase on debounced saves.</p><p>Board schema is versioned JSON so exports and future features (templates, comments) don't break existing boards.</p><div class="cs-arch"><div class="cs-flow"><span>Prompt UI</span><span class="cs-arrow">→</span><span>Gemini API</span><span class="cs-arrow">→</span><span>Board schema</span><span class="cs-arrow">→</span><span>Canvas editor</span><span class="cs-arrow">→</span><span>Supabase</span><span class="cs-arrow">→</span><span>Export</span></div><div class="cs-arch-list"><div class="cs-arch-item"><strong>Prompt panel</strong>Brief input, style tags, regenerate controls</div><div class="cs-arch-item"><strong>AI parser</strong>Structured JSON: colors, fonts, references, notes</div><div class="cs-arch-item"><strong>Canvas</strong>Grid layout, drag-drop, resize handles</div><div class="cs-arch-item"><strong>Collaboration</strong>Presence, live cursors, optimistic updates</div><div class="cs-arch-item"><strong>Supabase</strong>Auth, boards table, realtime subscriptions</div><div class="cs-arch-item"><strong>Export</strong>PNG rasterization, PDF layout, JSON download</div></div></div></div>
+    </section>
+      <section class="cs-section r" id="built">
+      <div class="cs-section-head"><p class="cs-section-label">Delivery</p><h2 class="cs-section-title">What I built</h2></div>
+      <div class="cs-section-body"><p>Full product loop from AI prompt engineering to export pipelines.</p><div class="cs-features"><div class="cs-feature r"><p class="cs-feature-title">Gemini integration</p><p class="cs-feature-desc">Server-side API route with structured output parsing into board schema.</p></div><div class="cs-feature r"><p class="cs-feature-title">Structured board model</p><p class="cs-feature-desc">Sections for palette, typography, references, notes — not freeform markdown.</p></div><div class="cs-feature r"><p class="cs-feature-title">Canvas editor</p><p class="cs-feature-desc">Drag-and-drop tiles, inline edit, regenerate single sections without redoing whole board.</p></div><div class="cs-feature r"><p class="cs-feature-title">Realtime collaboration</p><p class="cs-feature-desc">Supabase channels for board updates and collaborator presence.</p></div><div class="cs-feature r"><p class="cs-feature-title">Export pipelines</p><p class="cs-feature-desc">PNG via html-to-image, PDF via layout engine, JSON for programmatic reuse.</p></div><div class="cs-feature r"><p class="cs-feature-title">Vercel deployment</p><p class="cs-feature-desc">Edge-friendly API routes, env-managed secrets, public MVP URL.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="deep-dives">
+      <div class="cs-section-head"><p class="cs-section-label">Technical</p><h2 class="cs-section-title">Deep dives</h2></div>
+      <div class="cs-section-body"><h4>Structured generation prompts</h4><p>System prompts enforce JSON schema; validation rejects malformed AI output with user-visible retry.</p><h4>Conflict-free collaboration</h4><p>Last-write-wins on tile position with operational transforms deferred — MVP prioritizes simplicity over Google Docs-grade merging.</p><h4>Export fidelity</h4><p>PDF export uses print-specific CSS so client handoffs match on-screen layout.</p></div>
+    </section>
+      <section class="cs-section r" id="timeline">
+      <div class="cs-section-head"><p class="cs-section-label">Process</p><h2 class="cs-section-title">Timeline & phases</h2></div>
+      <div class="cs-section-body"><div class="cs-timeline"><div class="cs-tl-item"><p class="cs-tl-phase">Concept</p><p class="cs-tl-title">User interviews with design students, schema design</p><p class="cs-tl-desc">Validated export formats and collaboration need</p></div><div class="cs-tl-item"><p class="cs-tl-phase">MVP gen</p><p class="cs-tl-title">Gemini + static canvas</p><p class="cs-tl-desc">First end-to-end prompt-to-board flow</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Persistence</p><p class="cs-tl-title">Supabase auth + save/load</p><p class="cs-tl-desc">Boards survive sessions</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Collab + export</p><p class="cs-tl-title">Realtime + PNG/PDF/JSON</p><p class="cs-tl-desc">Live MVP on Vercel</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="results">
+      <div class="cs-section-head"><p class="cs-section-label">Impact</p><h2 class="cs-section-title">Results & outcomes</h2></div>
+      <div class="cs-section-body"><p>MoodBoard AI is live and iterating — a rare portfolio piece you can actually use in a creative workflow.</p><ul><li>Prompt-to-board flow reduces moodboard setup from hours to minutes</li><li>Realtime collaboration works on shared public MVP</li><li>Three export formats cover designer handoff scenarios</li><li>Versioned board schema supports future template marketplace</li></ul><div class="cs-tags"><span class="cs-tag">Next.js</span><span class="cs-tag">AI</span><span class="cs-tag">Gemini</span><span class="cs-tag">Supabase</span><span class="cs-tag">Collaboration</span><span class="cs-tag">Creative Tools</span><span class="cs-tag">Vercel</span></div></div>
+    </section>
+      <section class="cs-section r" id="problems">
+      <div class="cs-section-head"><p class="cs-section-label">Engineering</p><h2 class="cs-section-title">Hard problems</h2></div>
+      <div class="cs-section-body"><div class="cs-problems"><div class="cs-problem r"><h4>Unstructured AI output</h4><p>Gemini sometimes returns prose instead of hex codes.</p><p class="cs-solution"><strong>Solution →</strong> JSON schema validation + automatic retry with stricter system prompt.</p></div><div class="cs-problem r"><h4>Canvas + AI state sync</h4><p>Regenerating one section shouldn't wipe manual edits elsewhere.</p><p class="cs-solution"><strong>Solution →</strong> Section-scoped regeneration with merge into existing board state.</p></div><div class="cs-problem r"><h4>Export layout shifts</h4><p>PNG exports clipped content on long boards.</p><p class="cs-solution"><strong>Solution →</strong> Dedicated export viewport with fixed dimensions per board aspect ratio.</p></div><div class="cs-problem r"><h4>Collaboration race conditions</h4><p>Two users dragging same tile caused jumps.</p><p class="cs-solution"><strong>Solution →</strong> Optimistic UI with server timestamp resolution for position conflicts.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="lessons">
+      <div class="cs-section-head"><p class="cs-section-label">Reflection</p><h2 class="cs-section-title">Lessons learned</h2></div>
+      <div class="cs-section-body"><div class="cs-lessons"><div class="cs-lesson r"><span class="cs-lesson-n">01</span><span>AI features need schemas, not vibes — designers want hex codes, not 'a soft blue'.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">02</span><span>Export is a feature, not an afterthought — build it alongside the canvas.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">03</span><span>Supabase realtime is fast to prototype; define write boundaries early.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="reviewer">
+      <div class="cs-section-head"><p class="cs-section-label">Guide</p><h2 class="cs-section-title">Reviewer walkthrough</h2></div>
+      <div class="cs-section-body"><div class="cs-steps"><div class="cs-step r"><span class="cs-step-n">01</span><p>Open the <strong>live MVP</strong> and enter a creative brief (e.g. 'minimal skincare brand, warm neutrals').</p></div><div class="cs-step r"><span class="cs-step-n">02</span><p>Review generated palette and typography — then drag tiles to customize.</p></div><div class="cs-step r"><span class="cs-step-n">03</span><p>Open a second browser/incognito to test collaboration on the same board link.</p></div><div class="cs-step r"><span class="cs-step-n">04</span><p>Export PNG and PDF — compare layout to on-screen canvas.</p></div><div class="cs-step r"><span class="cs-step-n">05</span><p>Browse GitHub for API route prompt templates and board schema types.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="stack">
+      <div class="cs-section-head"><p class="cs-section-label">Stack</p><h2 class="cs-section-title">Technology choices</h2></div>
+      <div class="cs-section-body"><div class="cs-rationale"><div class="cs-rat-item r"><span class="cs-rat-tech">Next.js</span><span class="cs-rat-why">App Router, API routes for Gemini, SSR for marketing pages.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Gemini</span><span class="cs-rat-why">Structured creative generation with server-side key security.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Supabase</span><span class="cs-rat-why">Postgres persistence, auth, and realtime subscriptions.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">TypeScript</span><span class="cs-rat-why">Board schema types shared across client, API, and exports.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">TailwindCSS</span><span class="cs-rat-why">Canvas chrome and export-friendly print styles.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="next">
+      <div class="cs-section-head"><p class="cs-section-label">Roadmap</p><h2 class="cs-section-title">What's next</h2></div>
+      <div class="cs-section-body"><p>Template library, comment threads on tiles, Figma plugin export, and fine-tuned style presets for brand agencies.</p></div>
+    </section>
+
+      <div class="cs-footer-nav r">
+        <a href="pulseboard.html">← PulseBoard</a>
+        <a href="../index.html#projects" class="cs-fn-home">All projects</a>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</main>
+<footer><p>© 2026 Nehang Patel</p><div class="footer-right"><a href="../index.html" style="color:var(--muted);font-size:.66rem;text-decoration:none">← Portfolio home</a></div></footer>
+<div id="resumeOverlay" role="dialog" aria-modal="true" aria-label="Nehang Patel — Resume">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <p class="resume-modal-title">Nehang Patel <span>— Resume</span></p>
+      <div class="resume-modal-actions">
+        <a href="../assets/resume/Nehang_Patel_Resume.pdf" download="Nehang_Patel_Resume.pdf" rel="noopener noreferrer" class="resume-dl-btn" id="resumeDlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="resume-close" id="resumeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="resume-body">
+      <div class="rv-header">
+        <h2 class="rv-name">Nehang <span>Patel</span></h2>
+        <div class="rv-meta">
+          <span>Los Angeles, CA</span>
+          <a href="mailto:nehangal@usc.edu">nehangal@usc.edu</a>
+          <a href="https://linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nehangpatel</a>
+          <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer">github.com/NehangPatel23</a>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Education</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Southern California</span><span class="rv-entry-date">Aug 2025 — May 2027</span></div>
+          <p class="rv-entry-sub">MS Computer Science · Viterbi School of Engineering</p>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Cincinnati</span><span class="rv-entry-date">Aug 2020 — May 2025</span></div>
+          <p class="rv-entry-sub">BS Computer Science · Minor: Cyber Operations &amp; Software Engineering</p>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Experience</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">Jan 2024 — Apr 2024</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · West Chester, OH</p>
+          <ul class="rv-list"><li>Refactored web-scraping codebase; built Flutter UI with Golang API integration</li></ul>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Skills</p>
+        <div class="rv-skills">
+          <span class="rv-skill">Python</span><span class="rv-skill">Flutter</span><span class="rv-skill">GoLang</span><span class="rv-skill">TypeScript</span><span class="rv-skill">React</span><span class="rv-skill">Next.js</span><span class="rv-skill">MySQL</span><span class="rv-skill">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/case-study.js" defer></script>
+</body>
+</html>

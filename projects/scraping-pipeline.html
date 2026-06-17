@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="color-scheme" content="dark light"/>
+<meta name="theme-color" content="#07070A" media="(prefers-color-scheme: dark)"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Enterprise Scraping Pipeline — Case Study | Nehang Patel</title>
+<meta name="description" content="Refactored MediTechSafe's web-scraping pipeline to process 10,000+ records daily with QA automation, normalization, and MySQL-backed validation dashboards."/>
+<meta property="og:title" content="Enterprise Scraping Pipeline — Case Study | Nehang Patel"/>
+<meta property="og:description" content="Refactored MediTechSafe's web-scraping pipeline to process 10,000+ records daily with QA automation, normalization, and MySQL-backed validation dashboards."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://nehang-portfolio.vercel.app/projects/scraping-pipeline"/>
+<meta property="og:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Enterprise Scraping Pipeline — Case Study"/>
+<meta name="twitter:description" content="Refactored MediTechSafe's web-scraping pipeline to process 10,000+ records daily with QA automation, normalization, and MySQL-backed validation dashboards."/>
+<meta name="twitter:image" content="https://nehang-portfolio.vercel.app/assets/og-banner.png"/>
+<link rel="canonical" href="https://nehang-portfolio.vercel.app/projects/scraping-pipeline"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%2307070A'/%3E%3Ccircle cx='17' cy='17' r='2.6' fill='%23A78BF5'/%3E%3C/svg%3E"/>
+<script>(function(){try{var t=localStorage.getItem('nehang-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+<link rel="stylesheet" href="../assets/css/case-study.css"/>
+</head>
+<body>
+<div id="progress-bar"></div>
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cur"></div>
+<div id="cur2"></div>
+<a class="skip-link" href="#cs-main">Skip to content</a>
+
+<nav id="nav">
+  <a href="../index.html" class="logo" aria-label="Nehang Patel">
+    <div class="logo-mark"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="8"  x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="8"  x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="6"  stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="17" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="7" y1="17" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="17" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="7" y1="26" x2="17" y2="28" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="6"  x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <line x1="17" y1="17" x2="27" y2="12" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="17" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".35"/>
+        <line x1="17" y1="28" x2="27" y2="22" stroke="var(--gold)" stroke-width=".9" stroke-opacity=".5"/>
+        <circle cx="7" cy="8"  r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="17" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="7" cy="26" r="2.4" fill="var(--gold)" opacity=".9"/>
+        <circle cx="17" cy="6"  r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="17" cy="17" r="2.6" fill="var(--gold)" opacity="1"/>
+        <circle cx="17" cy="28" r="2.1" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity=".8"/>
+        <circle cx="27" cy="12" r="2.2" fill="var(--teal)" opacity=".9"/>
+        <circle cx="27" cy="22" r="2.2" fill="var(--teal)" opacity=".9"/>
+      </svg></div>
+    <div class="logo-wordmark">
+      <span class="logo-name">Nehang Patel</span>
+      <span class="logo-sub">Software Engineer</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#exp">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="resume-btn" id="resumeBtn">Resume</button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="../index.html#about" class="dl">About</a>
+  <a href="../index.html#projects" class="dl">Projects</a>
+  <a href="../index.html#exp" class="dl">Experience</a>
+  <a href="../index.html#education" class="dl">Education</a>
+  <a href="../index.html#contact" class="dl">Contact</a>
+  <button class="drawer-resume" id="drawerResumeBtn">Resume</button>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    <a href="https://x.com/itsnehangp_x" target="_blank" rel="noopener noreferrer" class="drawer-soc" aria-label="X"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="mailto:nehangal@usc.edu?subject=Hello%20Nehang&amp;body=Hi%20Nehang%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect.%0A%0A" class="drawer-soc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+  </div>
+</div>
+<main id="cs-main" class="cs-page">
+
+  <header class="cs-hero">
+    <div class="cs-hero-inner">
+      <div class="cs-proprietary r">
+        <span class="cs-proprietary-pill">Proprietary · Review pending</span>
+        <span class="cs-proprietary-note">Proprietary codebase — built during internship at MediTechSafe. Case study details pending your review.</span>
+      </div>
+      <a href="../index.html#projects" class="cs-back r">All projects</a>
+      <p class="cs-eyebrow r"><span class="cs-eyebrow-dot"></span>Internship · Data Engineering · Production</p>
+      <h1 class="cs-title r">Enterprise <em>Scraping Pipeline</em></h1>
+      <p class="cs-lead r">A production data pipeline refactor at MediTechSafe — transforming brittle scrapers into a stable system processing 10,000+ records daily with automated QA, normalization layers, and engineering dashboards for real-time visibility.</p>
+      <p class="cs-lead-sub r">This work spanned two internship terms. The first focused on building reliable collection at scale; the second on refactoring for maintainability, observability, and data quality gates before records ever reached downstream systems.</p>
+      <div class="cs-meta-grid r"><div class="cs-meta-cell"><p class="cs-meta-label">Role</p><p class="cs-meta-val">Software Developer Intern</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Timeline</p><p class="cs-meta-val">May 2023 — Apr 2024</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Context</p><p class="cs-meta-val">MediTechSafe Inc · Healthcare data</p></div><div class="cs-meta-cell"><p class="cs-meta-label">Scale</p><p class="cs-meta-val">10,000+ records / day</p></div></div>
+      <div class="cs-ctas r"><a href="../index.html#contact" class="btn btn-g">Discuss this project</a></div>
+    </div>
+  </header>
+
+  <div class="cs-layout">
+    <aside class="cs-toc"><p class="cs-toc-label">On this page</p><a href="#overview">Overview</a><a href="#visual-proof">Visual proof</a><a href="#context">Context</a><a href="#challenge">Challenge</a><a href="#goals">Goals</a><a href="#architecture">Architecture</a><a href="#built">What I built</a><a href="#deep-dives">Deep dives</a><a href="#timeline">Timeline</a><a href="#results">Results</a><a href="#problems">Hard problems</a><a href="#lessons">Lessons</a><a href="#reviewer">Reviewer guide</a><a href="#stack">Stack</a><a href="#next">What's next</a></aside>
+    <div class="cs-content">
+      <div class="cs-metrics"><div class="cs-metric r"><div class="cs-metric-n">10k+</div><div class="cs-metric-l">Records processed daily</div></div><div class="cs-metric r"><div class="cs-metric-n">2</div><div class="cs-metric-l">Internship terms</div></div><div class="cs-metric r"><div class="cs-metric-n">1000s</div><div class="cs-metric-l">Records QA'd per run</div></div><div class="cs-metric r"><div class="cs-metric-n">Hours</div><div class="cs-metric-l">Manual work saved per sprint</div></div></div>
+
+      <section class="cs-section r" id="overview">
+      <div class="cs-section-head"><p class="cs-section-label">Overview</p><h2 class="cs-section-title">At a glance</h2></div>
+      <div class="cs-section-body"><div class="cs-glance"><div class="cs-glance-item r"><p class="cs-glance-label">Product type</p><p class="cs-glance-val">Backend · Data pipeline · Web scraping</p></div><div class="cs-glance-item r"><p class="cs-glance-label">My contribution</p><p class="cs-glance-val">Scraper refactoring, QA automation, normalization logic, MySQL validation queries, internal dashboards</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Constraints</p><p class="cs-glance-val">Proprietary codebase — case study describes architecture and outcomes, not source code</p></div><div class="cs-glance-item r"><p class="cs-glance-label">Stack</p><p class="cs-glance-val">Python, Selenium, Pandas, MySQL, internal tooling</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="visual-proof">
+      <div class="cs-section-head"><p class="cs-section-label">Visual proof</p><h2 class="cs-section-title">Interface & artifacts</h2></div>
+      <div class="cs-section-body"><p>Screenshots and recordings document key flows. Replace placeholders in <code>assets/projects/case-studies/scraping-pipeline/</code> when assets are ready.</p><div class="cs-gallery cs-gallery-2"><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · scraping-pipeline/dashboard.png</div>
+      <figcaption class="cs-gallery-cap">Pipeline dashboard — run status, record counts, and error rates surfaced for engineering review.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · scraping-pipeline/detail.png</div>
+      <figcaption class="cs-gallery-cap">QA report view — field-level validation failures grouped by source and severity.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · scraping-pipeline/flow.png</div>
+      <figcaption class="cs-gallery-cap">Normalization flow — raw scraped payload vs cleaned schema-ready record side by side.</figcaption>
+    </figure><figure class="cs-gallery-item r">
+      <div class="cs-placeholder"><span class="cs-placeholder-icon">◈</span>Visual asset · scraping-pipeline/mobile.png</div>
+      <figcaption class="cs-gallery-cap">Historical trend chart — daily volume and failure rate over time for capacity planning.</figcaption>
+    </figure></div></div>
+    </section>
+      <section class="cs-section r" id="context">
+      <div class="cs-section-head"><p class="cs-section-label">Context</p><h2 class="cs-section-title">Background & origin</h2></div>
+      <div class="cs-section-body"><p>MediTechSafe collects and normalizes healthcare-adjacent data from public web sources to power internal products. When I joined, the scraping stack worked — until it didn't. Source sites changed markup without warning, duplicate records slipped through, and engineers learned about failures from angry downstream consumers rather than monitoring.</p><p>My first internship (Summer 2023) focused on building volume: scalable collection, cleaning routines, and integration hooks. The second (Spring 2024) was a deliberate refactor — treat scraping as production software with tests, metrics, and ownership boundaries.</p><blockquote class="cs-quote r">Scraping isn't a script you run once. It's a system that has to survive the internet changing every Tuesday.</blockquote></div>
+    </section>
+      <section class="cs-section r" id="challenge">
+      <div class="cs-section-head"><p class="cs-section-label">Problem</p><h2 class="cs-section-title">The challenge</h2></div>
+      <div class="cs-section-body"><p>The legacy pipeline was a collection of scripts orchestrated manually. Each source had its own parsing logic, error handling was inconsistent, and QA happened ad hoc before releases. At 10,000+ records per day, a single selector break could poison an entire batch.</p><p>Downstream teams needed trustworthy data — normalized field names, deduplicated keys, and confidence that bad rows never silently passed through. Engineering needed visibility: which sources failed, how long runs took, and whether data drift was a parsing bug or a source change.</p></div>
+    </section>
+      <section class="cs-section r" id="goals">
+      <div class="cs-section-head"><p class="cs-section-label">Strategy</p><h2 class="cs-section-title">Goals & constraints</h2></div>
+      <div class="cs-section-body"><ul><li>Stabilize daily collection at 10,000+ records without manual babysitting</li><li>Introduce automated QA gates that block bad batches before integration</li><li>Normalize heterogeneous source schemas into a consistent internal model</li><li>Give engineers dashboards backed by MySQL queries — not log archaeology</li><li>Reduce hours of manual collection and validation work per sprint</li></ul></div>
+    </section>
+      <section class="cs-section r" id="architecture">
+      <div class="cs-section-head"><p class="cs-section-label">System</p><h2 class="cs-section-title">Architecture overview</h2></div>
+      <div class="cs-section-body"><p>The refactored architecture treats each source as an isolated adapter implementing a common interface: fetch, parse, emit raw records. Orchestration handles scheduling and retries; it doesn't embed source-specific logic.</p><p>QA runs as a pipeline stage, not an afterthought. Records fail fast with structured error codes so engineers can filter dashboards by failure type and prioritize fixes.</p><div class="cs-arch"><div class="cs-flow"><span>Scheduler</span><span class="cs-arrow">→</span><span>Source scrapers</span><span class="cs-arrow">→</span><span>Raw staging</span><span class="cs-arrow">→</span><span>QA & normalization</span><span class="cs-arrow">→</span><span>MySQL store</span><span class="cs-arrow">→</span><span>Dashboards</span></div><div class="cs-arch-list"><div class="cs-arch-item"><strong>Collector layer</strong>Per-source scrapers with retry/backoff and change-detection hooks</div><div class="cs-arch-item"><strong>Staging</strong>Raw payloads preserved for replay when parsers need fixes</div><div class="cs-arch-item"><strong>QA engine</strong>Schema validation, duplicate detection, anomaly thresholds</div><div class="cs-arch-item"><strong>Normalizer</strong>Field mapping, type coercion, canonical identifiers</div><div class="cs-arch-item"><strong>MySQL</strong>System of record + validation query source</div><div class="cs-arch-item"><strong>Observability</strong>Run metrics, alerts, trend views for engineering</div></div></div></div>
+    </section>
+      <section class="cs-section r" id="built">
+      <div class="cs-section-head"><p class="cs-section-label">Delivery</p><h2 class="cs-section-title">What I built</h2></div>
+      <div class="cs-section-body"><p>I contributed across collection, quality, and visibility — with increasing ownership in the second internship term.</p><div class="cs-features"><div class="cs-feature r"><p class="cs-feature-title">Scraper refactoring</p><p class="cs-feature-desc">Extracted shared HTTP/session handling, selector utilities, and logging. Reduced duplicate code across source adapters.</p></div><div class="cs-feature r"><p class="cs-feature-title">QA automation</p><p class="cs-feature-desc">Built validation suites that run on every batch — required fields, regex patterns, cross-field consistency, duplicate keys.</p></div><div class="cs-feature r"><p class="cs-feature-title">Normalization layer</p><p class="cs-feature-desc">Mapped source-specific schemas to internal canonical models with explicit transform rules and audit trails.</p></div><div class="cs-feature r"><p class="cs-feature-title">MySQL validation queries</p><p class="cs-feature-desc">Authored queries engineers use to spot drift: null rate spikes, cardinality changes, stale source timestamps.</p></div><div class="cs-feature r"><p class="cs-feature-title">Engineering dashboards</p><p class="cs-feature-desc">Surfaced pipeline health metrics so failures were visible before downstream consumers noticed.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="deep-dives">
+      <div class="cs-section-head"><p class="cs-section-label">Technical</p><h2 class="cs-section-title">Deep dives</h2></div>
+      <div class="cs-section-body"><h4>Staging-first debugging</h4><p>Keeping raw payloads let us replay parser fixes against historical data without re-scraping — critical when sources rate-limit or change frequently.</p><h4>Failure taxonomy</h4><p>We categorized errors (network, parse, schema, duplicate) so dashboards showed whether to page infra or assign a parser fix.</p><h4>Incremental rollout</h4><p>Refactored one high-volume source at a time with shadow runs comparing old vs new output before cutover.</p></div>
+    </section>
+      <section class="cs-section r" id="timeline">
+      <div class="cs-section-head"><p class="cs-section-label">Process</p><h2 class="cs-section-title">Timeline & phases</h2></div>
+      <div class="cs-section-body"><div class="cs-timeline"><div class="cs-tl-item"><p class="cs-tl-phase">Summer 2023</p><p class="cs-tl-title">Onboarding, source analysis, initial scalable collectors</p><p class="cs-tl-desc">Automated weekly collection saving hours of manual work</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Fall 2023</p><p class="cs-tl-title">QA measures on large batches, inconsistency detection</p><p class="cs-tl-desc">Thousands of records validated per run pre-integration</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Spring 2024</p><p class="cs-tl-title">Architecture refactor, shared libraries, staging layer</p><p class="cs-tl-desc">Improved stability and maintainability at 10k+ daily volume</p></div><div class="cs-tl-item"><p class="cs-tl-phase">Spring 2024</p><p class="cs-tl-title">Dashboards + MySQL validation tooling</p><p class="cs-tl-desc">Engineering visibility into pipeline health and data drift</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="results">
+      <div class="cs-section-head"><p class="cs-section-label">Impact</p><h2 class="cs-section-title">Results & outcomes</h2></div>
+      <div class="cs-section-body"><p>The pipeline moved from fragile scripts to a production-minded system engineering could reason about and monitor.</p><ul><li>10,000+ records processed daily with improved stability after refactor</li><li>Automated QA blocking bad batches before downstream integration</li><li>Hours of manual collection eliminated per project cycle</li><li>MySQL-backed validation giving engineers actionable drift signals</li></ul><div class="cs-tags"><span class="cs-tag">Python</span><span class="cs-tag">Selenium</span><span class="cs-tag">Pandas</span><span class="cs-tag">MySQL</span><span class="cs-tag">Data Pipeline</span><span class="cs-tag">QA</span><span class="cs-tag">Scraping</span></div></div>
+    </section>
+      <section class="cs-section r" id="problems">
+      <div class="cs-section-head"><p class="cs-section-label">Engineering</p><h2 class="cs-section-title">Hard problems</h2></div>
+      <div class="cs-section-body"><div class="cs-problems"><div class="cs-problem r"><h4>Source markup changes breaking parsers</h4><p>Healthcare and public data sites update layouts without notice.</p><p class="cs-solution"><strong>Solution →</strong> Isolated adapters + raw staging for replay + alert on parse failure rate spikes.</p></div><div class="cs-problem r"><h4>Silent data quality degradation</h4><p>Bad data looked valid until downstream analytics broke.</p><p class="cs-solution"><strong>Solution →</strong> Schema QA gates with hard failures and structured error reporting.</p></div><div class="cs-problem r"><h4>Debugging without reproducibility</h4><p>Engineers couldn't re-run failed records easily.</p><p class="cs-solution"><strong>Solution →</strong> Staging table preserving raw payloads with run IDs for replay.</p></div><div class="cs-problem r"><h4>Visibility gap</h4><p>Failures discovered by consumers, not collectors.</p><p class="cs-solution"><strong>Solution →</strong> Dashboards querying MySQL for run status, volumes, and error categories.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="lessons">
+      <div class="cs-section-head"><p class="cs-section-label">Reflection</p><h2 class="cs-section-title">Lessons learned</h2></div>
+      <div class="cs-section-body"><div class="cs-lessons"><div class="cs-lesson r"><span class="cs-lesson-n">01</span><span>Treat scrapers like microservices — contracts, retries, and observability, not one-off scripts.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">02</span><span>Raw staging is cheap storage that pays for itself the first time a parser breaks in production.</span></div><div class="cs-lesson r"><span class="cs-lesson-n">03</span><span>QA at the pipeline layer beats apologizing to downstream teams after integration.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="reviewer">
+      <div class="cs-section-head"><p class="cs-section-label">Guide</p><h2 class="cs-section-title">Reviewer walkthrough</h2></div>
+      <div class="cs-section-body"><div class="cs-steps"><div class="cs-step r"><span class="cs-step-n">01</span><p>Read this case study alongside my MediTechSafe UI project — the Flutter dashboard consumed these same API/metrics patterns.</p></div><div class="cs-step r"><span class="cs-step-n">02</span><p>Note the separation of concerns: collectors, QA, normalization, storage, observability.</p></div><div class="cs-step r"><span class="cs-step-n">03</span><p>Consider how you would replay a failed batch given only a run ID and staging payloads.</p></div><div class="cs-step r"><span class="cs-step-n">04</span><p>Review the hard problems section for failure taxonomy — that's what I'd whiteboard in an interview.</p></div><div class="cs-step r"><span class="cs-step-n">05</span><p>Contact me for additional context within NDA bounds — I can discuss architecture without sharing proprietary code.</p></div></div></div>
+    </section>
+      <section class="cs-section r" id="stack">
+      <div class="cs-section-head"><p class="cs-section-label">Stack</p><h2 class="cs-section-title">Technology choices</h2></div>
+      <div class="cs-section-body"><div class="cs-rationale"><div class="cs-rat-item r"><span class="cs-rat-tech">Python</span><span class="cs-rat-why">Primary language for scrapers, transforms, and orchestration glue.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Selenium</span><span class="cs-rat-why">Dynamic pages requiring browser automation where static parsing failed.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Pandas</span><span class="cs-rat-why">Batch transforms, deduplication, and QA statistics over large DataFrames.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">MySQL</span><span class="cs-rat-why">System of record and validation query layer for engineering dashboards.</span></div><div class="cs-rat-item r"><span class="cs-rat-tech">Internal tooling</span><span class="cs-rat-why">Company-specific schedulers and deployment — integrated, not reinvented.</span></div></div></div>
+    </section>
+      <section class="cs-section r" id="next">
+      <div class="cs-section-head"><p class="cs-section-label">Roadmap</p><h2 class="cs-section-title">What's next</h2></div>
+      <div class="cs-section-body"><p>Next evolution would add ML-assisted schema inference for new sources, automated selector healing, and stronger SLA alerting integrated with on-call rotation.</p></div>
+    </section>
+
+      <div class="cs-footer-nav r">
+        <a href="fintrackr.html">← FinTrackr</a>
+        <a href="../index.html#projects" class="cs-fn-home">All projects</a>
+        <a href="meditechsafe-ui.html">MediTechSafe Internal UI →</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer><p>© 2026 Nehang Patel</p><div class="footer-right"><a href="../index.html" style="color:var(--muted);font-size:.66rem;text-decoration:none">← Portfolio home</a></div></footer>
+<div id="resumeOverlay" role="dialog" aria-modal="true" aria-label="Nehang Patel — Resume">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <p class="resume-modal-title">Nehang Patel <span>— Resume</span></p>
+      <div class="resume-modal-actions">
+        <a href="../assets/resume/Nehang_Patel_Resume.pdf" download="Nehang_Patel_Resume.pdf" rel="noopener noreferrer" class="resume-dl-btn" id="resumeDlBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="resume-close" id="resumeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="resume-body">
+      <div class="rv-header">
+        <h2 class="rv-name">Nehang <span>Patel</span></h2>
+        <div class="rv-meta">
+          <span>Los Angeles, CA</span>
+          <a href="mailto:nehangal@usc.edu">nehangal@usc.edu</a>
+          <a href="https://linkedin.com/in/nehangpatel/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nehangpatel</a>
+          <a href="https://github.com/NehangPatel23" target="_blank" rel="noopener noreferrer">github.com/NehangPatel23</a>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Education</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Southern California</span><span class="rv-entry-date">Aug 2025 — May 2027</span></div>
+          <p class="rv-entry-sub">MS Computer Science · Viterbi School of Engineering</p>
+        </div>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">University of Cincinnati</span><span class="rv-entry-date">Aug 2020 — May 2025</span></div>
+          <p class="rv-entry-sub">BS Computer Science · Minor: Cyber Operations &amp; Software Engineering</p>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Experience</p>
+        <div class="rv-entry">
+          <div class="rv-entry-head"><span class="rv-entry-title">Software Developer Intern</span><span class="rv-entry-date">Jan 2024 — Apr 2024</span></div>
+          <p class="rv-entry-sub">MediTechSafe Inc · West Chester, OH</p>
+          <ul class="rv-list"><li>Refactored web-scraping codebase; built Flutter UI with Golang API integration</li></ul>
+        </div>
+      </div>
+      <div class="rv-section">
+        <p class="rv-section-title">Skills</p>
+        <div class="rv-skills">
+          <span class="rv-skill">Python</span><span class="rv-skill">Flutter</span><span class="rv-skill">GoLang</span><span class="rv-skill">TypeScript</span><span class="rv-skill">React</span><span class="rv-skill">Next.js</span><span class="rv-skill">MySQL</span><span class="rv-skill">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/case-study.js" defer></script>
+</body>
+</html>
