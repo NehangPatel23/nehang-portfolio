@@ -420,7 +420,8 @@ h2 i{font-style:italic;color:var(--gold)}
 .tcursor{display:inline-block;width:8px;height:1.1em;background:var(--gold);vertical-align:text-bottom;animation:blink .9s step-end infinite}
 
 /* FOOTER HEART */
-.footer-heart{color:#ef4444;font-size:.8rem}
+.footer-heart{display:inline-block;flex-shrink:0;vertical-align:middle}
+.footer-heart path{fill:#ef4444}
 .footer-right{display:flex;align-items:center;gap:6px;font-size:.66rem;letter-spacing:.04em;color:var(--muted)}
 
 footer{padding:26px var(--pad);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
