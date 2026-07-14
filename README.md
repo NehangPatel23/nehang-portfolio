@@ -32,7 +32,7 @@ Work spans AI product surfaces, mobile apps, macOS tooling, scraping pipelines, 
 
 ## The Site
 
-**[nehang-portfolio.vercel.app](https://nehang-portfolio.vercel.app)** — a single-page portfolio with eight deep-dive case studies. Vanilla HTML, CSS, and JavaScript on Vercel.
+**[nehang-portfolio.vercel.app](https://nehang-portfolio.vercel.app)** — a single-page portfolio with nine deep-dive case studies. Vanilla HTML, CSS, and JavaScript on Vercel.
 
 - **Hero** — Three.js neural-network canvas with live A\* pathfinding
 - **Projects** — Filterable grid with expandable highlights
@@ -46,6 +46,12 @@ Work spans AI product surfaces, mobile apps, macOS tooling, scraping pipelines, 
 ## Projects
 
 #### Completed
+
+**[NexusIQ AI](projects/nexusiq-ai.html)** · `Next.js` `React` `TypeScript` `Prisma` `PostgreSQL` `Ollama`  
+Enterprise decision intelligence — multi-agent due diligence with citations, contradictions, risk simulation, and board-ready reports.  
+[Live demo](https://nexusiq-ai-steel.vercel.app) · [Case study](projects/nexusiq-ai.html) · [GitHub](https://github.com/NehangPatel23/nexusiq-ai)
+
+<br>
 
 **[MoodBoard AI](projects/moodboard-ai.html)** · `Next.js` `React` `TypeScript` `Supabase` `Gemini`  
 AI workspace that turns a brief into a structured moodboard — palette, typography, references, and export.  
