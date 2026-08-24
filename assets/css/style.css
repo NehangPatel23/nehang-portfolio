@@ -324,6 +324,10 @@ h2 i{font-style:italic;color:var(--gold)}
 .rv-meta{display:flex;flex-wrap:wrap;gap:18px;font-size:.74rem;color:var(--muted);letter-spacing:.04em}
 .rv-meta a{color:var(--teal);text-decoration:none}
 .rv-meta a:hover{color:var(--gold)}
+.rv-summary{font-size:.82rem;color:var(--muted);line-height:1.72;margin:0}
+.rv-skill-group{margin-bottom:12px}
+.rv-skill-group:last-child{margin-bottom:0}
+.rv-skill-label{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
 .rv-section{margin-bottom:26px}
 .rv-section-title{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .rv-section-title::after{content:'';flex:1;height:1px;background:var(--border)}
