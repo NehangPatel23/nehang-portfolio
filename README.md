@@ -24,9 +24,9 @@
 
 ## About
 
-Software engineer focused on **intuitive UI**, **data pipelines**, and **full-stack systems**. MS CS at USC Viterbi; BS in CS from the University of Cincinnati with a minor in Cyber Operations & Software Engineering.
+Software Engineer focused on **intuitive UI**, **data pipelines**, and **full-stack systems**. MS CS at USC Viterbi; BS in CS from the University of Cincinnati with a minor in Cyber Operations & Software Engineering.
 
-Work spans AI product surfaces, mobile apps, macOS tooling, scraping pipelines, and interactive web experiences. Taught design thinking to **1,500+ students**. President-elect of **GRIDS @ USC** (Fall 2026). Open to internships and new grad roles.
+Work spans AI product surfaces, mobile apps, macOS tooling, scraping pipelines, and interactive web experiences. Taught design thinking to **1,500+ students**. President of **GRIDS @ USC** (since May 2026). Open to New Grad roles.
 
 <br>
 
@@ -83,13 +83,13 @@ Internal Flutter UI with reusable widget library and Go API integration.
 
 <br>
 
-#### In Development
-
 **[CourseArc](projects/coursearc.html)** · `React` `Vite` `TypeScript` `Tailwind`  
-Canvas LMS reimagined with a modern React stack and dark/light theming.  
+Canvas LMS reimagined with a modern React stack and dark/light theming. Feature-complete client-side studio.  
 [Live demo](https://canvas-clone-theta.vercel.app) · [Case study](projects/coursearc.html) · [GitHub](https://github.com/NehangPatel23/canvas-clone)
 
 <br>
+
+#### In Development
 
 **[PulseBoard](projects/pulseboard.html)** · `Next.js` `TypeScript`  
 Real-time monitoring dashboard — logs, metrics, and alerts in one interface.  

@@ -374,6 +374,7 @@ h2 i{font-style:italic;color:var(--gold)}
 .edate{font-size:.68rem;color:var(--muted);margin-bottom:12px}
 .ecourses{font-size:.78rem;color:var(--muted);line-height:1.75}
 .ecourses strong{color:var(--text);font-weight:400}
+.ecourses em{font-style:normal;color:var(--teal);font-size:.72rem}
 
 /* MARQUEE */
 #marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
